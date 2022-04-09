@@ -25,7 +25,7 @@ var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerS
 for (var i = 0; i < positions.length; i ++) {
     
     // 마커 이미지의 이미지 크기 입니다
-    var imageSize = new kakao.maps.Size(60, 84); 
+    var imageSize = new kakao.maps.Size(56, 84); 
     
     // 마커 이미지를 생성합니다    
     var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 

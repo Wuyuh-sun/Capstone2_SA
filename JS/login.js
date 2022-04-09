@@ -5,6 +5,8 @@ const loginform = document.getElementById("loginform");
 const login_top = document.getElementById("login_top");
 const login_bottom = document.getElementById("login_bottom");
 const login_center = document.getElementById("login_center");
+const findPW = document.getElementById("findPW");
+const signUP = document.getElementById("signUP");
 
 
 function homeClick(){
@@ -16,4 +18,6 @@ function homeClick(){
 }
 
 saHome.addEventListener("click", homeClick);
+
+
 
