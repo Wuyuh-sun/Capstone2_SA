@@ -18,7 +18,7 @@ body{
   height: 70px;
   /* background-color: whitesmoke; */
   border-bottom: 1px solid rgb(182, 182, 182);
-  
+  background-color: white;
   position: fixed;
   z-index: 2;
 }
@@ -147,9 +147,7 @@ body{
 }
 
 
-
-
-/* 마커 */
+/* 지도 정보 오버레이 */
 .wrap {
   position: absolute;
   top:-300px;
@@ -166,7 +164,6 @@ body{
   overflow: hidden;
   box-shadow: 5px 5px 8px 5px rgba(0, 0, 0, 0.4);
 }
-
 .wrap img {
   position: absolute;
   width: 100%;
@@ -263,44 +260,45 @@ body{
   text-decoration: none;
   color: black;
 }
-.place_link li:nth-child(1){
+.place_link a:nth-child(1) li{
   background-image: url(../img/placeinfo.png);
   background-size: 38px;
   background-position: center;
   background-repeat: no-repeat;
 }
-.place_link li:nth-child(1)::after{
+.place_link a:nth-child(1)::after{
   content: "위치 복사";
   font-size: 0.9em;
   font-weight: 700;
   position: relative;
-  top:55px;
+  top:65px;
+  left: 12px;
 }
-.place_link li:nth-child(2){
+.place_link a:nth-child(2) li{
   background-image: url(../img/bbs.png);
   background-size: 38px;
   background-position: center;
   background-repeat: no-repeat;
 }
-.place_link li:nth-child(2)::after{
+.place_link a:nth-child(2)::after{
   content: "게시판";
   font-size: 0.9em;
   font-weight: 700;
   position: relative;
-  top:55px;
-  left: 8px;
+  top:65px;
+  left: 19px;
 }
-.place_link li:nth-child(3){
+.place_link a:nth-child(3) li{
   background-image: url(../img/faq.png);
   background-size: 38px;
   background-position: center;
   background-repeat: no-repeat;
 }
-.place_link li:nth-child(3)::after{
+.place_link a:nth-child(3)::after{
   content: "건의함";
   font-size: 0.9em;
   font-weight: 700;
   position: relative;
-  top:55px;
-  left: 8px;
+  top:65px;
+  left: 19px;
 }
