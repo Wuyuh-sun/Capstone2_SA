@@ -5,9 +5,8 @@
  
 CREATE TABLE `userinfo` (
   `idx` int(11) NOT NULL AUTO_INCREMENT,
-  `id` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
   `email` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL,
   `nickname` varchar(20) NOT NULL,
   `adultcheck` bit NOT NULL,
   PRIMARY KEY (`idx`)

@@ -292,7 +292,7 @@ var positions = [
       `    <a href="#2"><li></li></a>` +
       `    <a href="#3"><li></li></a>` +
       `  </ul>` +
-      `  <div class="close" onclick="closeOverlay()" title="닫기"></div>` +
+      `  <div class="close" onclick="closeOverlay('overlay')" title="닫기"></div>` +
       `</div>` +
       `</div>` +
       `<div class="infoArrow"></div>`,
@@ -321,7 +321,7 @@ var positions = [
       `    <a href="bbs.html"><li></li></a>` +
       `    <a href="faq.html"><li></li></a>` +
       `  </ul>` +
-      `  <div class="close" onclick="closeOverlay()" title="닫기"></div>` +
+      `  <div class="close" onclick="closeOverlay('overlay')" title="닫기"></div>` +
       `</div>` +
       `</div>` +
       `<div class="infoArrow"></div>`,
@@ -347,7 +347,7 @@ for (var i = 0; i < positions.length; i++) {
     title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
     image: markerImage, // 마커 이미지
   });
-
+  
   // 마커 위에 커스텀오버레이를 표시합니다
   // 마커를 중심으로 커스텀 오버레이를 표시하기위해 CSS를 이용해 위치를 설정했습니다
   var overlay = new kakao.maps.CustomOverlay({
@@ -355,26 +355,29 @@ for (var i = 0; i < positions.length; i++) {
     // map: map, // 마커를 표시할 지도
     position: marker.getPosition(),
   });
+  var closeBtn = new kakao.maps.CustomOverlay({
+    content: positions[i].content,
+    positions: marker.getPosition(),
+  });
+
+
   // 마커를 클릭했을 때 커스텀 오버레이를 표시합니다
-  
   kakao.maps.event.addListener(
     marker,
     "click",
     openOverlay(overlay)
   );
   
-  function openOverlay(overlay) {
-    return function () {
-        overlay.setMap(map);
-        console.log(overlay);
-    };
-  }
-  // 커스텀 오버레이를 닫기 위해 호출되는 함수입니다
-  function closeOverlay() {
-      overlay.setMap(null);
-  }
 }
-
+function openOverlay(overlay) {
+  return function () {
+      overlay.setMap(map);
+  };
+}
+// 커스텀 오버레이를 닫기 위해 호출되는 함수입니다
+const closeOverlay = () => {
+    overlay.setMap(null);
+}
 // for (var i = 0; i < positions.length; i ++) {
 //   // 마커를 생성합니다
 //   var marker = new kakao.maps.Marker({
@@ -390,11 +393,11 @@ for (var i = 0; i < positions.length; i++) {
 //   // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
 //   // 이벤트 리스너로는 클로저를 만들어 등록합니다
 //   // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
-//   kakao.maps.event.addListener(marker, 'click', makeOverListener(map, marker, infowindow));
-//   // kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+//   kakao.maps.event.addListener(marker, 'mousedown', makeOverListener(map, marker, infowindow));
+//   kakao.maps.event.addListener(marker, 'click', makeOutListener(infowindow));
 // }
 
-// 인포윈도우를 표시하는 클로저를 만드는 함수입니다
+// // 인포윈도우를 표시하는 클로저를 만드는 함수입니다
 // function makeOverListener(map, marker, infowindow) {
 //   return function() {
 //       infowindow.open(map, marker);
