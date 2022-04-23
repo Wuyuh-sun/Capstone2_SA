@@ -1,3 +1,4 @@
+CREATE DATABASE `SA`;
 --
 -- Table structure for table `userinfo`
 --
@@ -16,4 +17,4 @@ CREATE TABLE `userinfo` (
 -- Dumping data for table `userinfo`
 --
  
-INSERT INTO `userinfo` VALUES (1, 'root', '111111', '20172144@kiu.kr', 'teamleader', 1);
+INSERT INTO `userinfo`(email, password, nickname, adultcheck) VALUES ('wjh0970@naver.com', '111111','teamleader',1);

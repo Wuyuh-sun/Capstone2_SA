@@ -59,11 +59,10 @@ body {
   transform: translate(-50%, -50%);
   transition: 1s;
 }
-
-/* 회원가입 폼 */
-.signUP_Form {
-  width: 380px;
-  height: 680px;
+/* form */
+.form {
+  width: 300px;
+  height: 150px;
   background-color: rgb(245, 245, 245);
   position: fixed;
   z-index: 0;
@@ -75,55 +74,25 @@ body {
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
   /* display: none; */
 }
-.form_in{
-  display: flex;
-  flex-direction: column;
-}
-.form_in .text1{
-  font-size: 3em;
-  font-weight: bold;
+.form .text1{
   text-align: center;
-  margin-top: 20px;
-}
-.form_in input{
-  padding: 15px;
-  width: 290px;
+  font-size: 1.5em;
   font-weight: bold;
-  position: relative;
-  left:50%;
+  margin-top: 50px;
+}
+a{
+  position: absolute;
+  left: 50%;
   transform: translateX(-50%);
-  margin-top: 30px;
-  background-image: url(../img/X_red.png);
-  background-repeat: no-repeat;
-  background-position: 280px center;
-  background-size: 2em;
-}
-.form_in .text2, .form_in .text3{
-  color: red;
-  font-size: 0.7em;
-  margin-top: 20px;
-  position:relative;
-  left: 30px;
-}
-.form_in .adult_check{
-  width: 120px;
-  height: 50px;
-  background-color: white;
-  color: red;
-  border: 1px solid black;
-  cursor: pointer;
-}
-.form_in .text4{
-  color: red;
-  font-size: 0.7em;
-  text-align: center;
-  margin-top: 20px;
-}
-.form_in .signUpBtn{
-  width: 120px;
-  height: 50px;
-  background-color: black;
   color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 20px;
   border: 1px solid black;
-  cursor: pointer;
+  background-color: black;
+  width: 80px;
+  height: 35px;
+  line-height: 30px;
+  text-align: center;
 }
