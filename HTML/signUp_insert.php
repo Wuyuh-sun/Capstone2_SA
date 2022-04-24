@@ -21,6 +21,8 @@ if($result === false){
 } else {
   $message = "<div class='text1'>회원가입을 성공했습니다!</div>";
 }
+
+mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>

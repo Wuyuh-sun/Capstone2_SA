@@ -17,7 +17,7 @@
     </div>
 
     <!-- 회원가입 창 -->
-    <form action="signUp_insert.php" class="signUP_Form" method="POST">
+    <form action="signUp_insert.php" name="signUP_Form" class="signUP_Form" method="POST">
         <div class="form_in" id="signUPform">
             <div class="text1">SignUp</div>
             <input type="text" name="email" id="inputEmail" class="inputEmail" placeholder="이메일을 입력하세요" autocomplete="off" onchange="emailCheck()">
@@ -33,7 +33,7 @@
 
             <input type="button" class="adult_check" value="성인인증">
             <div class="text4">※성인인증을 완료해주세요</div>
-            <input type="submit" class="signUpBtn" value="회원가입">
+            <a href="#" class="signUpBtn" onclick="check_input()">회원가입</a>
         </div>
     </form>
 

@@ -318,8 +318,8 @@ var positions = [
       `  <div class="place_address2">경북 경산시 하양읍 가마실길 50 본관</div>` +
       `  <ul class="place_link">` +
       `    <a href="#1"><li></li></a>` +
-      `    <a href="bbs.html"><li></li></a>` +
-      `    <a href="faq.html"><li></li></a>` +
+      `    <a href="bbs.php"><li></li></a>` +
+      `    <a href="faq.php"><li></li></a>` +
       `  </ul>` +
       `  <div class="close" onclick="closeOverlay('overlay')" title="닫기"></div>` +
       `</div>` +

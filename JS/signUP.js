@@ -32,3 +32,26 @@ function nickNameCheck(){
     nickname.style.backgroundImage="url(../img/x_red.png)";
   }
 }
+function check_input(){
+  if (!document.signUP_Form.email.value) { 
+    alert("이메일을 입력하세요"); 
+    document.signUP_Form.email.focus();
+    return;
+  }
+  if (!document.signUP_Form.pw.value) { 
+    alert("비밀번호를 입력하세요"); 
+    document.signUP_Form.pw.focus();
+    return;
+  }
+  if (!document.signUP_Form.pw_check.value) { 
+    alert("비밀번호 확인을 입력하세요"); 
+    document.signUP_Form.pw_check.focus();
+    return;
+  }
+  if (!document.signUP_Form.nickname.value) { 
+    alert("닉네임을 입력하세요"); 
+    document.signUP_Form.nickname.focus();
+    return;
+  }
+  document.signUP_Form.submit();
+}

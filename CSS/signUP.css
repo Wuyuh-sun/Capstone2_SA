@@ -18,7 +18,7 @@ body {
   left: 50%;
   transform: translate(-50%, 50%);
   margin-bottom: 380px;
-  transition: 1s;
+  /* transition: 1s; */
 }
 
 .SA {
@@ -37,7 +37,7 @@ body {
   top: 42%;
   left: 48%;
   transform: translate(-50%, -50%);
-  transition: 1s;
+  /* transition: 1s; */
 }
 
 .smokearea {
@@ -57,7 +57,7 @@ body {
   left: 50%;
   margin-left: 5px;
   transform: translate(-50%, -50%);
-  transition: 1s;
+  /* transition: 1s; */
 }
 
 /* 회원가입 폼 */
@@ -71,7 +71,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   margin-top: 50px;
-  transition: 1s;
+  /* transition: 1s; */
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
   /* display: none; */
 }
@@ -125,5 +125,12 @@ body {
   background-color: black;
   color: white;
   border: 1px solid black;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
   cursor: pointer;
+  position: relative;
+  left:50%;
+  transform: translateX(-50%);
+  margin-top: 30px;
 }
