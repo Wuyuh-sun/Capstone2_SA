@@ -1,3 +1,16 @@
+<?
+session_start();
+
+if($_SESSION["useremail"]){
+  echo(" 
+        <script> 
+            window.alert('이미 로그인 되어 있습니다');
+            location.href = 'main.php'; 
+        </script> 
+      ");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

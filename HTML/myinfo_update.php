@@ -7,9 +7,6 @@
     'nickname'=>mysqli_real_escape_string($conn, $_POST['nickname'])
   );
   session_start();
-  mysqli_query($conn, "set session character_set_connection=utf8;");
-  mysqli_query($conn, "set session character_set_results=utf8;");
-  mysqli_query($conn, "set session character_set_client=utf8;");
 
   $sql = "UPDATE userinfo 
               SET 
@@ -19,7 +16,7 @@
               WHERE
                 idx ='{$_SESSION['idx']}'
          ";
-  $result = mysqli_query($conn, $sql);
+  $result = mysqli_multi_query($conn, $sql);
 
   if($result === false){
     echo ("
@@ -73,7 +70,7 @@
           ");
         }
       }
-  }
+    }
   
 
   mysqli_close($conn);

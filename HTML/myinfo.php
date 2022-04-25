@@ -15,7 +15,14 @@ if(isset($_SESSION["userpassword"])){
 } else {
   $userpassword = "";
 }
-
+if(!$_SESSION["useremail"]){
+  echo(" 
+        <script> 
+          window.alert('로그인 후 이용해주세요');
+          location.href = 'index.php'; 
+        </script> 
+      ");
+}
 ?>
 
 <!DOCTYPE html>
@@ -61,24 +68,22 @@ if(isset($_SESSION["userpassword"])){
   <!-- 내 정보 -->
   <form action="myinfo_update.php" name="myinfo_update" method="POST">
     <img src="../img/user.png" alt="profile_image" class="profile_image">
-    <input type="text" name="nickname" class="nicknameEdit" placeholder="변경할 닉네임을 입력해주세요" 
-    value=<?=$usernickname?> 
-    maxlength="20">
+    <input type="text" name="nickname" class="nicknameEdit" placeholder="변경할 닉네임을 입력해주세요" maxlength="20"
+    onkeyup="if(window.event.keyCode==13){check_input()}" value=<?=$usernickname?> 
+    >
     <div class="id_pw_email_Form">
       <!-- 
       <label for="idEdit" class="idEdit_label">ID</label>
       <input type="text" name="idEdit" class="idEdit" placeholder="변경할 ID를 입력해주세요" value="root" maxlength="20"> -->
       <label for="emailEdit" class="emailEdit_label">e-mail</label>
-      <input type="text" name="email" class="emailEdit" placeholder="변경할 이메일을 입력해주세요" 
-      value=<?=$useremail?> 
-      maxlength="20">
+      <input type="text" name="email" class="emailEdit" placeholder="변경할 이메일을 입력해주세요" maxlength="20"
+      onkeyup="if(window.event.keyCode==13){check_input()}" value=<?=$useremail?> >
       <label for="pwEdit" class="pwEdit_label">PASSWORD</label>
-      <input type="text" name="pw" class="pwEdit" placeholder="변경할 비밀번호를 입력해주세요" 
-      value=<?=$userpassword?> 
-      minlength="6" maxlength="20">
+      <input type="text" name="pw" class="pwEdit" placeholder="변경할 비밀번호를 입력해주세요" minlength="6" maxlength="20"
+      onkeyup="if(window.event.keyCode==13){check_input()}" value=<?=$userpassword?> >
       <p>- 영문, 숫자, 특수문자를 섞어 6~20자 이내로 만드십시오.</p>
       <p>- 공백은 사용할 수 없습니다.</p>
-      <input type="text" name="pw_check" class="pw_Reinput" placeholder="변경할 비밀번호를 재입력해주세요" minlength="6" maxlength="20">
+      <input type="text" name="pw_check" class="pw_Reinput" placeholder="변경할 비밀번호를 재입력해주세요" minlength="6" maxlength="20" onkeyup="if(window.event.keyCode==13){check_input()}">
     </div>
     <a href="#" class="editBtn" onclick="check_input()">변경하기</a>
   </form>

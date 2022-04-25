@@ -1,4 +1,15 @@
+<?
+session_start();
 
+if($_SESSION["useremail"]){
+  echo(" 
+        <script> 
+            window.alert('이미 로그인 되어 있습니다');
+            location.href = 'main.php'; 
+        </script> 
+      ");
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,8 +35,8 @@
             <!-- 로그인 상단 -->
             <div class="login_top" id="login_top">
                 <div>Login</div>
-                <input type="text" size="33" class="loginEmail" name="email" placeholder="EMAIL을 입력하세요" autocomplete="off">
-                <input type="text" size="33" class="loginPW" name="pw" placeholder="PASSWORD를 입력하세요" autocomplete="off">
+                <input type="text" size="33" class="loginEmail" name="email" placeholder="EMAIL을 입력하세요" autocomplete="off" onkeyup="if(window.event.keyCode==13){check_input()}">
+                <input type="text" size="33" class="loginPW" name="pw" placeholder="PASSWORD를 입력하세요" autocomplete="off" onkeyup="if(window.event.keyCode==13){check_input()}">
                 <!-- 로그인 중간 -->
                 <div class="login_center" id="login_center">
                     <input type="checkbox" class="IDSAVE">

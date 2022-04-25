@@ -1,3 +1,15 @@
+<?
+  session_start();
+  if(!$_SESSION["useremail"]){
+    echo(" 
+          <script> 
+            window.alert('로그인 후 이용해주세요');
+            location.href = 'index.php'; 
+          </script> 
+        ");
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
