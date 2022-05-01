@@ -15,6 +15,7 @@ CREATE TABLE `userinfo` (
   `password` varchar(20) NOT NULL,
   `nickname` NVARCHAR(20) NOT NULL,
   `adultcheck` bit NOT NULL,
+  `email_checkNum` int(11) NULL
   PRIMARY KEY (`idx`)
 );
 --

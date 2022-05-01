@@ -5,3 +5,7 @@ kakao developers - https://developers.kakao.com/
 위도 경도 검색 - https://tablog.neocities.org/keywordposition.html
 
 git 명령어 - https://hackmd.io/@oW_dDxdsRoSpl0M64Tfg2g/ByfwpNJ-K
+
+mail 보내기 - https://blog.redinfo.co.kr/post/view?pid=74
+
+xampp 설치 - https://www.apachefriends.org/index.html

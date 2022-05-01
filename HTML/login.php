@@ -1,5 +1,5 @@
 <?
-$conn = mysqli_connect("localhost", "root","apmsetup","SA");
+$conn = mysqli_connect("localhost", "root","","SA");
 
 $data = array(
   'email'=>mysqli_real_escape_string($conn, $_POST['email']),

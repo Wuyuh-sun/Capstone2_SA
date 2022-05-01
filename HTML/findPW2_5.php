@@ -9,6 +9,22 @@ if(isset($_SESSION["useremail"])){
         </script> 
       ");
 }
+if(isset($_SESSION["findPW_email"])){
+  $email_value = $_SESSION["findPW_email"];
+} else{
+  echo(" 
+        <script> 
+            window.alert('접근 권한이 없습니다.');
+            history.go(-1);
+        </script> 
+      ");
+  $email_value = "";
+}
+echo "
+      <script>
+        console.log('{$_SESSION["findPW_checkNUM"]}')
+      </script>
+";
 ?>
 
 <!DOCTYPE html>
@@ -33,18 +49,18 @@ if(isset($_SESSION["useremail"])){
     <form action="sendMail.php" name="sendMail_form" method="POST">
         <div class="findPWform" id="findPWform">
             <div>Find PASSWORD</div>
-            <input type="text" name="email" size="33" class="inputEmail" placeholder="이메일을 입력하세요" autocomplete="off" onkeyup="if(window.event.keyCode==13){check_input()}">
-            <a href="#" class="certNumberBtn" onclick="check_input()">인증번호 전송</a>
+            <input type="text" name="email" size="33" class="inputEmail" placeholder="이메일을 입력하세요" autocomplete="off" disabled value=<?=$email_value?> >
+            <a href="#" class="certNumberBtn" onclick="return false">인증번호를<br>전송했습니다</a>
         </div>
     </form>
-    <form action="">
-        <input type="text" size="33" class="inputCtNumber" placeholder="인증번호를 입력하세요" autocomplete="off" disabled>
-        <a href="#" class="next_2" onclick="return false">다음</a>
+    <form action="number_check.php" name="numCheck_form" method="POST">
+        <input type="text" name="numCheck" size="33" class="inputCtNumber" placeholder="인증번호를 입력하세요" autocomplete="off">
+        <a href="#" class="next_2" onclick="check_Num()">다음</a>
     </form>
-    
+        
+    </form>
 
-
-    <script src="../JS/findpw.js"></script>
+    <script src="../JS/pwNumCheck.js"></script>
 </body>
 
 </html>

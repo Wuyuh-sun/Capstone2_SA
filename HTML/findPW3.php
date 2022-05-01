@@ -1,7 +1,7 @@
 <?
 session_start();
 
-if($_SESSION["useremail"]){
+if(isset($_SESSION["useremail"])){
   echo(" 
         <script> 
             window.alert('이미 로그인 되어 있습니다');
@@ -9,6 +9,18 @@ if($_SESSION["useremail"]){
         </script> 
       ");
 }
+if(isset($_SESSION["findPW_email"])){
+    $email_value = $_SESSION["findPW_email"];
+  } else{
+    echo(" 
+          <script> 
+              window.alert('접근 권한이 없습니다.');
+              history.go(-1);
+          </script> 
+        ");
+    $email_value = "";
+  }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,16 +41,17 @@ if($_SESSION["useremail"]){
     </div>
     <div class="graywindow"></div>
     <!-- 로그인 창 -->
-    <form action="">
+    <form action="findPW_update.php" name="findPW_update_form" method="POST">
         <div class="findPWform" id="findPWform">
             <div>Find PASSWORD</div>
-            <input type="text" size="33" class="inputNewPW" placeholder="새로운 비밀번호를 입력하세요">
-            <input type="text" size="33" class="inputRePW" placeholder="비밀번호를 재입력하세요">
-            <input type="button" class="next_3" value="다음">
+            <input type="text" name="newPW" size="33" id="inputNewPW" class="inputNewPW" placeholder="새로운 비밀번호를 입력하세요" onchange="newPwCheck()">
+            <input type="text" name="newPW_check" size="33" id="inputRePW" class="inputRePW" placeholder="비밀번호를 재입력하세요" onchange="newPwCheck2()">
+            <a href="#" class="next_3" onclick="check_input()">다음</a>
         </div>
     </form>
 
 
+    <script src="../JS/findPW3_check.js"></script>
 </body>
 
 </html>
