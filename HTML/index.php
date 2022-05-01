@@ -46,7 +46,7 @@ if($_SESSION["useremail"]){
             </div>
             <!-- 로그인 하단 -->
             <div class="login_bottom" id="login_bottom">
-                <div><a href="./findPW2.html">비밀번호 찾기</a></div>
+                <div><a href="./findPW2.php">비밀번호 찾기</a></div>
                 <div><a href="./signUp.php">회원가입</a></div>
             </div>
         </div>

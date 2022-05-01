@@ -30,14 +30,17 @@ if($_SESSION["useremail"]){
     </div>
     <div class="graywindow"></div>
     <!-- 로그인 창 -->
-    <form action="">
+    <form action="" method="POST">
         <div class="findPWform" id="findPWform">
             <div>Find PASSWORD</div>
             <input type="text" size="33" class="inputEmail" placeholder="이메일을 입력하세요">
             <input type="button" class="certNumberBtn" value="인증번호 전송">
+        </div>
+        <form action="">
             <input type="text" size="33" class="inputCtNumber" placeholder="인증번호를 입력하세요">
             <input type="button" class="next_2" value="다음">
-        </div>
+        </form>
+        
     </form>
 
 
