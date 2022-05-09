@@ -101,15 +101,8 @@
         <div class='content_date'>{$row2['regdate']}</div>
       </div>
       <div class='contentBox1_2'>
-      <a class='content_update' href='#' onclick='checkUpdateInfo()'>수정하기</a>
-      <a class='content_delete' href='#' onclick='checkDeleteInfo()'>삭제하기</a>
-
-      <form action='bbs_read_delete.php' name='bbs_read_delete' method='POST'>
-        <input type='hidden' name='title' id='delete_title' value={$row2['title']}>
-        <input type='hidden' name='author' value={$row2['author']}>
-        <input type='hidden' name='placename' value={$placename}>
-      </form>
-
+        <a class='content_update' href='#' onclick='checkUpdateInfo()'>수정하기</a>
+        <a class='content_delete' href='#' onclick='checkDeleteInfo()'>삭제하기</a>
       </div>
     </div>
     <textarea class='content_content' disabled maxlength='5000'>{$row2['content']} 
@@ -139,14 +132,14 @@
     echo "
           <script>
             const nickname = '{$_SESSION['usernickname']}';
-            const author = '{$row2['author']}';
-            
+            const author = '{$row2['author']}'
             function checkUpdateInfo(){
               if(nickname != author){
                 alert('수정 권한이 없습니다!');
                 location.href = '{$url}';
               } else{
-                location.href = '{$url}&update';
+                
+                location.href = '{$url}&mode=update';
               }
             }
             function checkDeleteInfo(){
@@ -155,8 +148,7 @@
                 location.href = '{$url}';
               } else{
                 if(confirm('정말로 삭제 하시겠습니까?(삭제하면 복구가 불가능합니다.)') == true){
-                  
-                  document.bbs_read_delete.submit();
+                  alert('확인누름');
                 } else {
                   location.href = '{$url}';
                 }
@@ -167,7 +159,7 @@
     // echo  $_SESSION["usernickname"];
 
     // 글 읽기 수정
-    if(isset($_GET['update'])){
+    if(isset($_GET['mode'])){
       
       if($_SESSION['usernickname'] != $row2['author']){
         echo "
@@ -218,16 +210,6 @@
     ";
     $_SESSION['placename'] = $placename;
     $_SESSION['recent_bbs_title'] = $row2['title'];
-    }
-    if(isset($_GET['delete'])){
-      if($_SESSION['usernickname'] != $row2['author']){
-        echo "
-        <script>
-        alert('접근권한이 없습니다.');
-        // history.go(-1);
-        </script>
-        ";
-      }
     }
   }
   

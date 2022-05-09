@@ -52,7 +52,19 @@
   display: inline;
   padding-left: 20px;
 }
+
 .contentBox1_2 a{
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  text-decoration: none;
+  padding: 12px 20px 12px 20px;
+  border-radius: 50px;
+  font-size: 1em;
+  font-weight: 500;
+  margin-left: 30px;
+}
+.contentBox1_2 form a{
   background-color: black;
   color: white;
   border: 1px solid black;
