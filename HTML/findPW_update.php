@@ -1,5 +1,5 @@
 <?
-  $conn = mysqli_connect("localhost", "root","","SA");
+  include("./db_connect.php");
   session_start();
 
   $email_value = $_SESSION["findPW_email"];

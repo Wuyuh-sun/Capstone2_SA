@@ -1,5 +1,5 @@
 <?php 
-  $conn = mysqli_connect("localhost", "root","","SA");
+  include("./db_connect.php");
 
   $data = array(
     'email'=>mysqli_real_escape_string($conn, $_POST['email'])

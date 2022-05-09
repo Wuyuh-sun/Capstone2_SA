@@ -3,7 +3,7 @@ $check_num = $_POST["numCheck"];
 
 session_start();
 
-if(isset($_SESSION["findPW_checkNUM"]) == $check_num){
+if($_SESSION["findPW_checkNUM"] == $check_num){
   echo "
         <script>
           alert('인증에 성공했습니다');

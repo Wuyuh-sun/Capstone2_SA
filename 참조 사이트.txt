@@ -1,5 +1,9 @@
 프로젝트 저장소 - https://github.com/Wuyuh-sun/Capstone2_SA
 
+프로젝트 도메인 - http://samap.shop/HTML/index.php
+
+호스팅 센터(cafe24) - https://hosting.cafe24.com/
+
 kakao developers - https://developers.kakao.com/
 
 위도 경도 검색 - https://tablog.neocities.org/keywordposition.html
@@ -9,3 +13,6 @@ git 명령어 - https://hackmd.io/@oW_dDxdsRoSpl0M64Tfg2g/ByfwpNJ-K
 mail 보내기 - https://blog.redinfo.co.kr/post/view?pid=74
 
 xampp 설치 - https://www.apachefriends.org/index.html
+
+mysql 계정 권한 부여 - https://velog.io/@ejayjeon/MYSQL-1.-%EA%B3%84%EC%A0%95-%EC%83%9D%EC%84%B1-%EA%B6%8C%ED%95%9C-%EB%B6%80%EC%97%AC
+
