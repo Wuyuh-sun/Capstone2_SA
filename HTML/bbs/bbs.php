@@ -89,12 +89,11 @@
     $row2 = mysqli_fetch_array($result);
     // echo $row2['author'];
     // echo $_SESSION["usernickname"];
-    
     $bbs_form = "";
     $bbsRead_form = "
     <div class='bbs_form'>
     <h1 class='bbs_title'>게시판 - {$placename}</h1>
-    <input type='text' class='content_title' value={$row2['title']} disabled>
+    <input type='text' class='content_title' value='{$row2['title']}' disabled>
     <div class='contentBox1'>
       <div class='contentBox1_1'>
         <div class='content_author'>{$row2['author']}</div>
@@ -105,9 +104,9 @@
       <a class='content_delete' href='#' onclick='checkDeleteInfo()'>삭제하기</a>
 
       <form action='bbs_read_delete.php' name='bbs_read_delete' method='POST'>
-        <input type='hidden' name='title' id='delete_title' value={$row2['title']}>
-        <input type='hidden' name='author' value={$row2['author']}>
-        <input type='hidden' name='placename' value={$placename}>
+        <input type='hidden' name='title' id='delete_title' value='{$row2['title']}'>
+        <input type='hidden' name='author' value='{$row2['author']}'>
+        <input type='hidden' name='placename' value='{$placename}'>
       </form>
 
       </div>
@@ -181,7 +180,7 @@
     <div class='bbs_form'>
     <form action='bbs_read_update.php' name='bbs_form' method='POST'>
       <h1 class='bbs_title'>게시판 - {$placename}</h1>
-      <input type='text' name='title' class='content_title' id='write_title' value={$row2['title']} readonly>
+      <input type='text' name='title' class='content_title' id='write_title' value='{$row2['title']}' readonly>
       <div class='contentBox1'>
         <div class='contentBox1_1'>
           <div class='content_author'>{$row2['author']}</div>

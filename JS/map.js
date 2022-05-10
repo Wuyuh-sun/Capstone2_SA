@@ -321,7 +321,7 @@ var positions = [
       `    <a href="./bbs/bbs.php?placename=본관"><li></li></a>` +
       `    <a href="./faq/faq.php"><li></li></a>` +
       `  </ul>` +
-      `  <div class="close" onclick="closeOverlay('overlay')" title="닫기"></div>` +
+      `  <div class="close" onclick="closeOverlay()" title="닫기"></div>` +
       `</div>` +
       `</div>` +
       `<div class="infoArrow"></div>`,
@@ -352,7 +352,7 @@ for (var i = 0; i < positions.length; i++) {
   // 마커를 중심으로 커스텀 오버레이를 표시하기위해 CSS를 이용해 위치를 설정했습니다
   var overlay = new kakao.maps.CustomOverlay({
     content: positions[i].content,
-    // map: map, // 마커를 표시할 지도
+    map: map, // 마커를 표시할 지도
     position: marker.getPosition(),
   });
   var closeBtn = new kakao.maps.CustomOverlay({
@@ -369,12 +369,22 @@ for (var i = 0; i < positions.length; i++) {
   );
   
 }
+// function openOverlay(overlay) {
+//   return function () {
+//       overlay.setMap(map);
+//   };
+// }
 function openOverlay(overlay) {
+  
   return function () {
       overlay.setMap(map);
+      
   };
 }
 // 커스텀 오버레이를 닫기 위해 호출되는 함수입니다
+// const closeOverlay = () => {
+//     overlay.setMap(null);
+// }
 const closeOverlay = () => {
     overlay.setMap(null);
 }
