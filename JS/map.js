@@ -352,7 +352,7 @@ for (var i = 0; i < positions.length; i++) {
   // 마커를 중심으로 커스텀 오버레이를 표시하기위해 CSS를 이용해 위치를 설정했습니다
   var overlay = new kakao.maps.CustomOverlay({
     content: positions[i].content,
-    map: map, // 마커를 표시할 지도
+    // map: map, // 마커를 표시할 지도
     position: marker.getPosition(),
   });
   var closeBtn = new kakao.maps.CustomOverlay({
