@@ -16,3 +16,5 @@ xampp 설치 - https://www.apachefriends.org/index.html
 
 mysql 계정 권한 부여 - https://velog.io/@ejayjeon/MYSQL-1.-%EA%B3%84%EC%A0%95-%EC%83%9D%EC%84%B1-%EA%B6%8C%ED%95%9C-%EB%B6%80%EC%97%AC
 
+kakaoMap api 오버레이 닫기 문제 해결 - https://devtalk.kakao.com/t/topic/64848/8
+

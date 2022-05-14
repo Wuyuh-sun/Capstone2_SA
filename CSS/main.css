@@ -3,6 +3,7 @@
 
 body{
     font-family: myriad-pro, sans-serif;
+    height: 100%;
 }
 .windowBlack{
   width: 100%;
@@ -84,6 +85,9 @@ body{
   margin-top: 40px;
 }
 .menu_sidebar div:nth-child(3){
+  margin-top: 40px;
+}
+.menu_sidebar div:nth-child(4){
   margin-top: 40px;
 }
 .menu_closeBtn1{
@@ -181,14 +185,17 @@ body{
   left: 45%;
 }
 
-.info .close {
+button{
   position: absolute;
-  top: 20px;
-  right: 25px;
+  bottom: 263px;
+  left: 242px;
   color: #888;
-  width: 17px;
-  height: 17px;
+  width: 20px;
+  height: 20px;
   background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
 }
 .info .close:hover {
   cursor: pointer;
@@ -227,6 +234,12 @@ body{
 .place_address2{
   position: relative;
   top:40px;
+  left: 20px;
+  font-weight:500;
+}
+.place_address3{
+  position: relative;
+  top:50px;
   left: 20px;
   font-weight:500;
 }

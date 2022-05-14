@@ -39,7 +39,8 @@ if (!$num_match){
       $_SESSION["useremail"] = $row["email"]; 
       $_SESSION["usernickname"] = $row["nickname"]; 
       $_SESSION["userpassword"] = $row["password"]; 
-      $_SESSION["idx"] = $row["idx"]; 
+      $_SESSION["idx"] = $row["idx"];
+      $_SESSION["user_grade"] = $row["user_grade"];
       echo(" 
         <script> location.href = 'main.php'; 
         </script> 

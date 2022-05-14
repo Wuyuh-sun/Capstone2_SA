@@ -16,6 +16,7 @@ CREATE TABLE `userinfo` (
   `nickname` NVARCHAR(20) NOT NULL,
   `adultcheck` bit NOT NULL,
   `email_checkNum` int(11) NULL,
+  `user_grade` nvarchar(30) null,
   PRIMARY KEY (`idx`)
 );
 --
@@ -39,7 +40,6 @@ CREATE TABLE `bbs_main` (
 --
 CREATE TABLE `bbs_comm` (
   `idx` int(11) NOT NULL AUTO_INCREMENT,
-  
   `comm` varchar(100) NOT NULL,
   `author` varchar(20) NOT NULL,
   `class` int(11) NOT NULL,
@@ -47,8 +47,19 @@ CREATE TABLE `bbs_comm` (
   `groupNum` int(11) NOT NULL,
   PRIMARY KEY (`idx`)
 );
-
-
+--
+-- Table structure for table `sa_info`
+--
+CREATE TABLE `sa_info` (
+  `idx` int(11) NOT NULL AUTO_INCREMENT,
+  `placename` varchar(30) NULL,
+  `road_address` varchar(30) NULL,
+  `address` varchar(30) NOT NULL,
+  `lat` float(53) NOT NULL,
+  `lng` float(53) NOT NULL,
+  'placeImg' varchar(30) NULL,
+  PRIMARY KEY (`idx`)
+);
 
 
 
