@@ -30,17 +30,19 @@ if(isset($_SESSION["useremail"])){
     </div>
     <div class="graywindow"></div>
     <!-- 로그인 창 -->
+    <div class="findPWform" id="findPWform">
     <form action="sendMail.php" name="sendMail_form" method="POST">
-        <div class="findPWform" id="findPWform">
+        
             <div>Find PASSWORD</div>
             <input type="text" name="email" size="33" class="inputEmail" placeholder="이메일을 입력하세요" autocomplete="off" onkeyup="if(window.event.keyCode==13){check_input()}">
             <a href="#" class="certNumberBtn" onclick="check_input()">인증번호 전송</a>
-        </div>
+        
     </form>
     <form action="">
         <input type="text" size="33" class="inputCtNumber" placeholder="인증번호를 입력하세요" autocomplete="off" disabled>
         <a href="#" class="next_2" onclick="return false">다음</a>
     </form>
+    </div>
     
 
 
