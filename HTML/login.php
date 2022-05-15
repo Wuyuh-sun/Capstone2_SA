@@ -3,8 +3,11 @@ include("./db_connect.php");
 
 $data = array(
   'email'=>mysqli_real_escape_string($conn, $_POST['email']),
-  'pw'=>mysqli_real_escape_string($conn, $_POST['pw'])
+  'pw'=>mysqli_real_escape_string($conn, $_POST['pw']),
+  'idCheck'=>mysqli_real_escape_string($conn, $_POST['idCheck'])
 );
+
+// print_r($data);
 
 $sql = "select * from userinfo where email='{$data['email']}'";
 
@@ -41,6 +44,11 @@ if (!$num_match){
       $_SESSION["userpassword"] = $row["password"]; 
       $_SESSION["idx"] = $row["idx"];
       $_SESSION["user_grade"] = $row["user_grade"];
+      if($data['idCheck'] == 'on'){
+        setcookie('useremail',$row['email'],time() + (86400 * 30),"/");
+      } else{
+        setcookie('useremail',$row['email'],time() - (86400 * 30),"/");
+      }
       echo(" 
         <script> location.href = 'main.php'; 
         </script> 

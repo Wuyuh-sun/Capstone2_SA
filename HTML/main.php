@@ -173,7 +173,7 @@ while ($row = mysqli_fetch_array($result)) {
   <script src="../JS/menu.js"></script>
   <?= $CREATE_MAP ?>
   <!-- <?= $MAP_SETCENTER ?> -->
-  <?= $MAP_TYPECHANGE ?>
+  <!-- <?= $MAP_TYPECHANGE ?> -->
 
 
   <script>

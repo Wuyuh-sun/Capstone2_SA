@@ -14,7 +14,7 @@ function menuOpenClick(){
   windowBlack.style.display = "block";
 }
 function menuCloseClick(){
-  menuSidebar.style.left = "-300px";
+  menuSidebar.style.left = "-310px";
   windowBlack.style.display = "none";
 }
 // 우측 메뉴 함수
@@ -23,7 +23,7 @@ function chatOpenClick(){
   windowBlack.style.display = "block";
 }
 function chatCloseClick(){
-  friendSidebar.style.right = "-300px";
+  friendSidebar.style.right = "-310px";
   windowBlack.style.display = "none";
 }
 // 좌측 메뉴 이벤트

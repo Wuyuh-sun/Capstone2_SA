@@ -77,7 +77,7 @@ if(!$_SESSION["useremail"]){
       <input type="text" name="idEdit" class="idEdit" placeholder="변경할 ID를 입력해주세요" value="root" maxlength="20"> -->
       <label for="emailEdit" class="emailEdit_label">e-mail</label>
       <input type="text" name="email" class="emailEdit" placeholder="변경할 이메일을 입력해주세요" maxlength="20"
-      onkeyup="if(window.event.keyCode==13){check_input()}" value=<?=$useremail?> >
+      onkeyup="if(window.event.keyCode==13){check_input()}" value=<?=$useremail?> readonly>
       <label for="pwEdit" class="pwEdit_label">PASSWORD</label>
       <input type="text" name="pw" class="pwEdit" placeholder="변경할 비밀번호를 입력해주세요" minlength="6" maxlength="20"
       onkeyup="if(window.event.keyCode==13){check_input()}" value=<?=$userpassword?> >

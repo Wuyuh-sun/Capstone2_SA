@@ -1,6 +1,9 @@
 <?
 session_start();
 
+$_SESSION["emailCheck"]='';
+$_SESSION["nicknameCheck"]='';
+
 if(isset($_SESSION["useremail"])){
   echo(" 
         <script> 
@@ -36,11 +39,11 @@ if(isset($_SESSION["useremail"])){
             <!-- 로그인 상단 -->
             <div class="login_top" id="login_top">
                 <div>Login</div>
-                <input type="text" size="33" class="loginEmail" name="email" placeholder="EMAIL을 입력하세요" autocomplete="off" onkeyup="if(window.event.keyCode==13){check_input()}">
-                <input type="text" size="33" class="loginPW" name="pw" placeholder="PASSWORD를 입력하세요" autocomplete="off" onkeyup="if(window.event.keyCode==13){check_input()}">
+                <input type="text" size="33" class="loginEmail" name="email" placeholder="EMAIL을 입력하세요" autocomplete="off" onkeyup="if(window.event.keyCode==13){check_input()};" value="<?=$_COOKIE['useremail']?>">
+                <input type="password" size="33" class="loginPW" name="pw" placeholder="PASSWORD를 입력하세요" autocomplete="off" onkeyup="if(window.event.keyCode==13){check_input()}">
                 <!-- 로그인 중간 -->
                 <div class="login_center" id="login_center">
-                    <input type="checkbox" class="IDSAVE">
+                    <input type="checkbox" name='idCheck' class="IDSAVE">
                     <div>Email 저장</div>
                     <a href="#" class="loginBtn" onclick="check_input()">로그인</a>
                 </div>

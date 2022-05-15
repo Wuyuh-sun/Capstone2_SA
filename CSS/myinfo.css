@@ -223,10 +223,14 @@ body{
   border-radius: 15px;
   font-weight: 600;
   font-size: 0.9em;
-  background-image: url(../img/pen.png);
+  /* background-image: url(../img/pen.png); */
   background-repeat: no-repeat;
   background-position: 265px center;
   background-size: 1.3em;
+}
+.emailEdit:read-only{
+  background-color: grey;
+  color: white;
 }
 .emailEdit_label{
   position: absolute;

@@ -11,3 +11,8 @@ function check_input(){
   }
   document.login_form.submit();
 }
+if(document.login_form.email.value){
+  document.login_form.idCheck.checked = true;
+} else{
+  document.login_form.idCheck.checked = false;
+}

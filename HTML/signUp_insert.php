@@ -3,16 +3,16 @@ include("./db_connect.php");
 
 $data = array(
   'email'=>mysqli_real_escape_string($conn, $_POST['email']),
-  'pw'=>mysqli_real_escape_string($conn, $_POST['pw']),
-  'nickname'=>mysqli_real_escape_string($conn, $_POST['nickname'])
+  'nickname'=>mysqli_real_escape_string($conn, $_POST['nickname']),
+  'pw'=>mysqli_real_escape_string($conn, $_POST['pw'])
 );
 
-$sql = "INSERT INTO userinfo(email, password, nickname, adultcheck) 
+$sql = "INSERT INTO userinfo(email, password, nickname) 
 VALUES (
   '{$data['email']}', 
   '{$data['pw']}',
-  '{$data['nickname']}',
-  1)";
+  '{$data['nickname']}'
+  )";
 
 $result = mysqli_multi_query($conn, $sql);
 if($result === false){

@@ -63,7 +63,7 @@ body {
 /* 회원가입 폼 */
 .signUP_Form {
   width: 380px;
-  height: 680px;
+  height: 630px;
   background-color: rgb(245, 245, 245);
   position: fixed;
   z-index: 0;
@@ -85,6 +85,7 @@ body {
   text-align: center;
   margin-top: 20px;
 }
+
 .form_in input{
   padding: 15px;
   width: 290px;
@@ -98,7 +99,7 @@ body {
   background-position: 280px center;
   background-size: 2em;
 }
-.form_in .text2, .form_in .text3{
+.form_in .text1_5, .form_in .text2, .form_in .text3, .form_in .text4{
   color: red;
   font-size: 0.7em;
   margin-top: 20px;
@@ -113,13 +114,8 @@ body {
   border: 1px solid black;
   cursor: pointer;
 }
-.form_in .text4{
-  color: red;
-  font-size: 0.7em;
-  text-align: center;
-  margin-top: 20px;
-}
-.form_in .signUpBtn{
+
+.signUpBtn{
   width: 120px;
   height: 50px;
   background-color: black;
@@ -129,8 +125,38 @@ body {
   text-align: center;
   line-height: 50px;
   cursor: pointer;
-  position: relative;
+  position: absolute;
   left:50%;
   transform: translateX(-50%);
   margin-top: 30px;
+}
+.emailCheckBtn{
+  width: 120px;
+  height: 30px;
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  text-decoration: none;
+  text-align: center;
+  line-height: 30px;
+  position: relative;
+  top: 15px;
+  left:50%;
+  transform: translateX(-50%);
+  display: block;
+}
+.nicknameCheckBtn{
+  width: 120px;
+  height: 30px;
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  text-decoration: none;
+  text-align: center;
+  line-height: 30px;
+  position: relative;
+  top: 15px;
+  left:50%;
+  transform: translateX(-50%);
+  display: block;
 }

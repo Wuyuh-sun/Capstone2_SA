@@ -14,9 +14,9 @@ CREATE TABLE `userinfo` (
   `email` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL,
   `nickname` NVARCHAR(20) NOT NULL,
-  `adultcheck` bit NOT NULL,
   `email_checkNum` int(11) NULL,
   `user_grade` nvarchar(30) null,
+  `user_profileImg` nvarchar(30) null,
   PRIMARY KEY (`idx`)
 );
 --
@@ -57,7 +57,7 @@ CREATE TABLE `sa_info` (
   `address` varchar(30) NOT NULL,
   `lat` float(53) NOT NULL,
   `lng` float(53) NOT NULL,
-  'placeImg' varchar(30) NULL,
+  `placeImg` varchar(30) NULL,
   PRIMARY KEY (`idx`)
 );
 
