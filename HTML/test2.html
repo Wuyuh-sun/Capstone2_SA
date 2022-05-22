@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+    }
+
+    h1 {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 60px;
+      text-align: center;
+      background: white;
+      margin: 0;
+      line-height: 60px;
+    }
+
+    section .box {
+      height: 500px;
+      background: red;
+    }
+
+    section .box p {
+      margin: 0;
+      color: white;
+      padding: 80px 20px;
+    }
+
+    section .box:nth-child(2n) {
+      background: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>infinity</h1>
+  <section>
+    <div class="box">
+      <p>1th</p>
+    </div>
+    <div class="box">
+      <p>2nd</p>
+    </div>
+  </section>
+
+  <script>
+    var count = 2;
+    window.onscroll = function (e) {
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        setTimeout(function () {
+          var addContent = document.createElement("div");
+          addContent.classList.add("box")
+          addContent.innerHTML = `<p>${++count}번째 블록</p>`
+          document.querySelector('section').appendChild(addContent);
+        }, 100)
+      }
+    }
+  </script>
+</body>
+
+</html>

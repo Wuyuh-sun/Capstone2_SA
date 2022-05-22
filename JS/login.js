@@ -16,3 +16,4 @@ if(document.login_form.email.value){
 } else{
   document.login_form.idCheck.checked = false;
 }
+document.getElementById

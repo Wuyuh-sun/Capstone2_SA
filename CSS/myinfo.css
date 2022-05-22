@@ -1,10 +1,11 @@
 @import url("https://use.typekit.net/avn7pgt.css");
 @import "reset.css";
 
-body{
-    font-family: myriad-pro, sans-serif;
+body {
+  font-family: myriad-pro, sans-serif;
 }
-.windowBlack{
+
+.windowBlack {
   width: 100%;
   height: 100%;
   background-color: black;
@@ -13,7 +14,8 @@ body{
   position: fixed;
   display: none;
 }
-.header{
+
+.header {
   width: 100%;
   height: 70px;
   /* background-color: whitesmoke; */
@@ -22,22 +24,24 @@ body{
   position: fixed;
   z-index: 2;
 }
-.SA_HOME{
-  width:50px;
+
+.SA_HOME {
+  width: 50px;
   height: 50px;
   background-color: rgb(36, 36, 36);
   border-radius: 50%;
   box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1);
   position: relative;
-  top:50%;
-  left:50%;
-  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: inline-block;
 }
-.SA{
+
+.SA {
   font-weight: 700;
   font-style: normal;
-  color:rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   font-size: 1.48em;
   letter-spacing: 0.1em;
   -webkit-user-select: none;
@@ -47,110 +51,191 @@ body{
   width: 50%;
   height: 40%;
   position: relative;
-  top:42%;
-  left:48%;
-  transform: translate(-50%,-50%);
+  top: 42%;
+  left: 48%;
+  transform: translate(-50%, -50%);
 }
+
 /* menu */
-.menu{
+.menu {
   width: 50px;
   position: fixed;
-  left:0%;
+  left: 0%;
   margin: 8px 0 0 10px;
   cursor: pointer;
 }
-.menu_sidebar{
-  width:300px;
+
+.menu_sidebar {
+  width: 300px;
   height: 100%;
   background-color: whitesmoke;
   position: fixed;
-  top:0;
-  left:-300px;
+  top: 0;
+  left: -300px;
   border-right: 1px solid rgba(34, 34, 34, 0.251);
   transition: 0.7s ease-in-out;
   z-index: 4;
 }
 
-.menu_sidebar a{
+.menu_sidebar a {
   text-decoration: none;
   color: rgb(87, 87, 87);
   font-size: 2em;
   font-weight: bold;
   position: relative;
-  top:40px;
-  left:40px;
+  top: 40px;
+  left: 40px;
 }
-.menu_sidebar div:nth-child(2){
+
+.menu_sidebar div:nth-child(2) {
   margin-top: 40px;
 }
-.menu_sidebar div:nth-child(3){
+
+.menu_sidebar div:nth-child(3) {
   margin-top: 40px;
 }
-.menu_closeBtn1{
+
+.menu_closeBtn1 {
   transform: rotate(90deg);
   width: 40px;
   position: absolute;
-  top:1%;
-  right:5%;
+  top: 1%;
+  right: 5%;
   cursor: pointer;
 }
+
 /* chat */
-.chat{
+.chat {
   width: 50px;
   position: fixed;
   right: 0%;
   margin: 10px 10px 0 0;
   cursor: pointer;
 }
-.friend_sidebar{
-  width:300px;
+
+.friend_sidebar {
+  width: 300px;
   height: 100%;
   background-color: whitesmoke;
   position: fixed;
-  top:0;
-  right:-300px;
+  top: 0;
+  right: -300px;
   border-right: 1px solid rgba(34, 34, 34, 0.251);
   transition: 0.7s ease-in-out;
   z-index: 4;
 }
-.friend_barTop{
-  width:100%;
+
+.friend_barTop {
+  width: 100%;
   height: 120px;
   background-color: whitesmoke;
   border-bottom: 0.1px solid rgba(119, 119, 119, 0.1);
   position: relative;
 }
-.menu_closeBtn2{
+
+.menu_closeBtn2 {
   transform: rotate(270deg);
   width: 40px;
   position: relative;
-  top:10%;
+  top: 10%;
   left: 6%;
   cursor: pointer;
 }
-.friend_sidebar div:nth-child(2){
+
+.friend_sidebar div:nth-child(2) {
   font-weight: bold;
   font-size: 1.7em;
   position: relative;
-  top:20%;
-  left:6%;
+  top: 20%;
+  left: 6%;
   color: rgb(87, 87, 87);
 }
 
 /* 프로필 수정 */
-.profile_image{
+.windowBlack2 {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: black;
+  opacity: 0.7;
+  z-index: 5;
+  display: none;
+}
+
+.imgClickForm {
+  width: 400px;
+  height: 200px;
+  border: 1px solid gray;
+  border-radius: 30px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  z-index: 6;
+  /* display: flex; */
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+}
+.imgClickForm label {
+  text-align: center;
+  font-size: 1.3em;
+  padding: 20px 0 25px 0;
+  font-weight: bold;
+  border-bottom: 1px solid gray;
+  color: steelblue;
+  cursor: pointer;
+}
+.imgClickForm input[type="file"] {
   position: absolute;
-  top:90px;
-  left:50%;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  /* position: absolute;
+  top:-20px; */
+}
+.imgClickForm .profileImg_delete{
+  outline: none;
+  border: none;
+  border-bottom: 1px solid gray;
+  font-size: 1.3em;
+  padding: 20px 0 20px 0;
+  background-color: white;
+  font-weight: bold;
+  color: red;
+  cursor: pointer;
+}
+.imgClickForm .profileImg_cancel{
+  outline: none;
+  border: none;
+  padding: 10px 0 0 0;
+  border-radius: 50px;
+  font-size: 1.2em;
+  background-color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.profile_image {
+  position: absolute;
+  top: 90px;
+  left: 50%;
   transform: translateX(-50%);
   border-radius: 50%;
   border: 2px solid black;
   width: 100px;
+  height: 100px;
+  cursor: pointer;
 }
-.nicknameEdit{
+
+.nicknameEdit {
   position: absolute;
-  top:220px;
-  left:50%;
+  top: 220px;
+  left: 50%;
   transform: translateX(-50%);
   width: 300px;
   height: 25px;
@@ -164,25 +249,28 @@ body{
   background-position: 270px center;
   background-size: 1.3em;
 }
-.id_pw_email_Form{
+
+.id_pw_email_Form {
   width: 400px;
   height: 600px;
   border: 2px solid black;
   border-radius: 100px;
   position: absolute;
-  top:280px;
+  top: 280px;
   left: 50%;
   transform: translateX(-50%);
   margin-bottom: 500px;
   box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
 }
-.id_pw_email_Form::after{
+
+.id_pw_email_Form::after {
   content: "";
   width: 1px;
   height: 200px;
   position: absolute;
-  top:700px;
+  top: 700px;
 }
+
 /* .idEdit{
   position: absolute;
   top:100px;
@@ -211,10 +299,10 @@ body{
   position: absolute;
   top:20px;
 } */
-.emailEdit{
+.emailEdit {
   position: absolute;
-  top:100px;
-  left:50%;
+  top: 100px;
+  left: 50%;
   transform: translateX(-50%);
   width: 270px;
   height: 25px;
@@ -228,20 +316,23 @@ body{
   background-position: 265px center;
   background-size: 1.3em;
 }
-.emailEdit:read-only{
+
+.emailEdit:read-only {
   background-color: grey;
   color: white;
 }
-.emailEdit_label{
+
+.emailEdit_label {
   position: absolute;
-  top:80px;
-  left:17%;
+  top: 80px;
+  left: 17%;
   color: gray;
 }
-.pwEdit{
+
+.pwEdit {
   position: absolute;
-  top:200px;
-  left:50%;
+  top: 200px;
+  left: 50%;
   transform: translateX(-50%);
   width: 270px;
   height: 25px;
@@ -255,25 +346,28 @@ body{
   background-position: 265px center;
   background-size: 1.3em;
 }
-p{
+
+p {
   color: red;
   position: relative;
   margin: 15px;
   font-size: 0.7em;
-  top:260px;
+  top: 260px;
   left: 50%;
   transform: translateX(-40%);
 }
-.pwEdit_label{
+
+.pwEdit_label {
   position: absolute;
-  top:180px;
-  left:17%;
+  top: 180px;
+  left: 17%;
   color: gray;
 }
-.pw_Reinput{
+
+.pw_Reinput {
   position: absolute;
-  top:350px;
-  left:50%;
+  top: 350px;
+  left: 50%;
   transform: translateX(-50%);
   width: 270px;
   height: 25px;
@@ -287,9 +381,10 @@ p{
   background-position: 265px center;
   background-size: 1.3em;
 }
-.editBtn{
+
+.editBtn {
   position: absolute;
-  top:780px;
+  top: 780px;
   left: 50%;
   transform: translateX(-50%);
   width: 150px;

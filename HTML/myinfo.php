@@ -1,4 +1,5 @@
 <?
+include("./db_connect.php");
 session_start();
 if(isset($_SESSION["useremail"])){
   $useremail = $_SESSION["useremail"];
@@ -23,6 +24,14 @@ if(!$_SESSION["useremail"]){
         </script> 
       ");
 }
+$sql = "select * from userinfo where email='{$_SESSION["useremail"]}'";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_array($result);
+// print_r($row);
+if($row['user_profileImg'] ==''){
+  $row['user_profileImg'] = 'user.png';
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -66,8 +75,16 @@ if(!$_SESSION["useremail"]){
     </div>
   </div>
   <!-- 내 정보 -->
-  <form action="myinfo_update.php" name="myinfo_update" method="POST">
-    <img src="../img/user.png" alt="profile_image" class="profile_image">
+  <form action="myinfo_update.php" name="myinfo_update" method="POST" enctype='multipart/form-data'>
+    <div class="windowBlack2" id="windowBlack2"></div>
+    <div class="imgClickForm" id='imgClickForm'>
+      <label for="profileImg">프로필 사진 변경</label>
+      <input type="file" name='profileImgFile' id='profileImg' onchange='profileImgFileSubmit()'>
+      <input type="button" class="profileImg_delete" value="프로필 사진 삭제" onclick="return profileUpdate_delete(this.form)">
+      <input type="button" class="profileImg_cancel" value="취소" onclick="profileUpdate_cancel()">
+      <!-- <input type="submit" value="oo"> -->
+    </div>
+    <img src="../img/userprofile/<?=$row['user_profileImg']?>" alt="profile_image" class="profile_image" id='profile_image' onclick='profileUpdate()'>
     <input type="text" name="nickname" class="nicknameEdit" placeholder="변경할 닉네임을 입력해주세요" maxlength="20"
     onkeyup="if(window.event.keyCode==13){check_input()}" value=<?=$usernickname?> 
     >
@@ -91,6 +108,7 @@ if(!$_SESSION["useremail"]){
 
   <script src="../JS/menu.js"></script>
   <script src="../JS/myinfo.js"></script>
+  <script src="../JS/userProfile.js"></script>
 
 </body>
 

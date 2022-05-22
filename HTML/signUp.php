@@ -22,7 +22,7 @@ $signUpForm = "
         <div class='text1'>SignUp</div>
 
         <form action='emailCheck.php' name='emailCheck_Form' method='POST'>
-            <input type='text' name='email' id='inputEmail' class='inputEmail' placeholder='이메일을 입력하세요' autocomplete='off' onkeyup='emailCheck()' value='{$_SESSION["emailCheck"]}'>
+            <input type='email' name='email' id='inputEmail' class='inputEmail' placeholder='이메일을 입력하세요' autocomplete='off' onkeyup='emailCheck()' value='{$_SESSION["emailCheck"]}'>
             <a href='#' class='emailCheckBtn' onclick='check_email()'>중복 확인</a>
         </form>
         <script>

@@ -60,7 +60,18 @@ CREATE TABLE `sa_info` (
   `placeImg` varchar(30) NULL,
   PRIMARY KEY (`idx`)
 );
-
+--
+-- Table structure for table `friends`
+--
+CREATE TABLE `friends` (
+  `idx` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(30) NULL,
+  `friendname` varchar(30) NULL,
+  `get` int(11) NULL,
+  `send` int(11) NULL,
+  `friend` int(11) NULL,
+  PRIMARY KEY (`idx`)
+);
 
 
 

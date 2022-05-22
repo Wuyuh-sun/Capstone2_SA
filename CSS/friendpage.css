@@ -137,131 +137,424 @@ body{
   color: rgb(87, 87, 87);
 }
 
-/* 친구 관리(요청, 추가) */
-.fdrstext, .fdaddtext, .sendfriendtext{
-  font-size: 1.3em;
-  font-weight: 600;
-  margin-left: 20px;
+/* 친구 관리(수락, 추가, 확인) */
+.friendForm{
+  /* background-color: green; */
   position: absolute;
-}
-.fdrstext{
-  top:200px;
-}
-.fdaddtext{
-  top:600px;
-}
-.sendfriendtext{
-  top:850px;
-}
-.friend_get{
-  position: absolute;
-  top:300px;
-  display: flex;
-  flex-direction: row;
-}
-li{
-  display: flex;
-  flex-direction: column;
-  border: 2px solid teal;
-  border-radius: 20px;
-  margin-left: 20px;
-  margin-right: 50px;
-  width: 170px;
-  height: 230px;
-}
-li img{
-  border-radius: 50%;
-  border: 2px solid teal;
-  width:100px;
-  position: relative;
-  top:10px;
-  left:50%;
+  left: 50%;
   transform: translateX(-50%);
+  width: 600px;
+  height: 100%;
 }
-li p{
+
+.mark_btn1{
+  width: 100%;
+  height: 50px;
+  /* background-color: aquamarine; */
+  position: absolute;
+  top: 80px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 3px solid black;
+  
+}
+.mark_btn1 li{
+  width: 120px;
+  height: 50px;
+  margin: 0 80px 0 80px;
   text-align: center;
-  margin-top: 20px;
-  font-size: 1.2em;
-  font-weight: 600;
 }
-li input:nth-child(3){
-  background-color: rgb(55, 140, 255);
-  width: 130px;
-  border-radius: 20px;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: 10px;
-  color: whitesmoke;
-  font-weight: 600;
-  font-size: 1em;
-  border: none;
-}
-li input:nth-child(4){
-  background-color: rgb(220, 80, 80);
-  width: 130px;
-  border-radius: 20px;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: 10px;
-  color: whitesmoke;
-  font-weight: 600;
-  font-size: 1em;
-  border: none;
-}
-.friendnameinput{
-  position: absolute;
-  top:700px;
-  width: 300px;
-  height: 0px;
-  border: 2px solid teal;
-  border-radius: 25px;
-  padding: 30px;
-  margin-left: 20px;
-  font-size: 1em;
-  font-weight: 600;
-}
-.friend_addBtn{
-  position: absolute;
-  top:710px;
-  left: 405px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 2px solid teal;
-  background-color: white;
-}
-.material-icons{
-  position: absolute;
-  top:713px;
-  left: 408px;
-  font-size: 2em;
-  color: teal;
-  -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    cursor: pointer;
+.mark_btn1 #btn_1{
+  /* border-bottom: 3px solid red; */
 }
 
-.friend_send{
+.mark_btn1 li:hover{
+  border-bottom: 3px solid steelblue;
+}
+.mark_btn1 a{
+  line-height: 50px;
+  text-decoration: none;
+  color: black;
+  font-size: 1em;
+  font-weight: bold;
+}
+.mark_btn2{
+  width: 100%;
+  height: 50px;
+  /* background-color: aquamarine; */
   position: absolute;
-  top:950px;
+  top: 150px;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  border-bottom: 3px solid black;
+  
+}
+.mark_btn2 li{
+  width: 120px;
+  height: 50px;
+  margin: 0 80px 0 80px;
+  text-align: center;
+}
+.mark_btn2 #btn_1{
+  /* border-bottom: 3px solid red; */
 }
 
-.friend_send li{
-  height: 210px;
+.mark_btn2 li:hover{
+  border-bottom: 3px solid steelblue;
 }
-.friend_send li::after{
-  width: 1px;
-  height: 100px;
-  content: "";
+.mark_btn2 a{
+  line-height: 50px;
+  text-decoration: none;
+  color: black;
+  font-size: 1em;
+  font-weight: bold;
+}
+.guideScroll{
+  background-image: url(../img/expand_circle_down_black_24dp.svg);
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.guideScroll::after{
+  content: "Scroll";
+  position: relative;
+  font-weight: bold;
+  width: 50px;
+  top:-15px;
+  left: 6.5px;
+}
+
+/* 친구 보내기 폼 */
+.sendForm{
+  /* background-color: skyblue; */
   position: absolute;
-  top:100%
+  top:220px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: calc(100% - 220px);
+  /* border-top: 3px solid black;
+  border-left: 3px solid black;
+  border-right: 3px solid black; */
 }
-.friend_send li input{
+.sendForm .friend_name{
+  width: 300px;
+  padding: 10px;
+  border: 3px solid steelblue;
+  border-radius: 50px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 30px;
+  outline: none;
+  text-align: center;
+}
+.sendForm .check_btn{
+  border: 3px solid steelblue;
+  border-radius: 50%;
+  padding: 7px;
+  position: relative;
+  left: 34%;
+}
+.sendForm .check_btn span{
+  font-size: 1.5em;
+  font-weight: bold;
+  color: steelblue;
+  text-align: center;
+  position: relative;
+  top:5px;
+}
+.sendForm .myinfo_text{
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: bold;
+  
+}
+.sendForm_ul{
+  /* background-color: red; */
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.sendForm_ul li{
+  width: 194px;
+  height: 200px;
+  /* background-color: blue; */
+  border: 3px solid steelblue;
+  border-radius: 50px;
+  position: relative;
+  margin: 20px 100px 0px 100px;
+}
+.sendForm_ul li img{
+  width: 100px;
+  border: 3px solid steelblue;
+  border-radius: 50px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 15px;
+}
+.sendForm_ul li input{
+  outline: none;
+  text-align: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 1.2em;
+  border: none;
+  width: 150px;
+}
+.sendForm_ul li .get_accept{
+  width: 150px;
+  background-color: rgb(55, 140, 255);
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  cursor: pointer;
+}
+.sendForm_ul li .get_delete{
+  width: 150px;
   background-color: rgb(220, 80, 80);
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.select_friendForm_ul{
+  /* background-color: red; */
+  position: relative;
+  /* display: flex; */
+  display: none;
+  justify-content: center;
+}
+.select_friendForm_ul li{
+  width: 194px;
+  height: 230px;
+  /* background-color: blue; */
+  border: 3px solid steelblue;
+  border-radius: 50px;
+  position: relative;
+  margin: 20px 100px 0px 100px;
+}
+.select_friendForm_ul li img{
+  width: 100px;
+  border: 3px solid steelblue;
+  border-radius: 50px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 15px;
+}
+.select_friendForm_ul li input{
+  outline: none;
+  text-align: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 1.2em;
+  border: none;
+  width: 150px;
+}
+.select_friendForm_ul li .get_accept{
+  width: 150px;
+  background-color: rgb(55, 140, 255);
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  cursor: pointer;
+}
+.not_select{
+  font-weight: bold;
+  font-size: 2em;
+  position: relative;
+  color:gray;
+  /* display: flex; */
+  display: none;
+  justify-content: center;
+  margin-top: 50px;
+}
+/* 친구 목록 폼 */
+.getForm_ul li .send_message{
+  width: 150px;
+  background-color: rgb(55, 140, 255);
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  cursor: pointer;
+}
+/* 친구 수락 폼*/
+.getForm_ul{
+  /* background-color: skyblue; */
+  position: absolute;
+  top:220px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: calc(100% - 220px);
+  /* border-top: 3px solid black;
+  border-left: 3px solid black;
+  border-right: 3px solid black; */
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+.getForm_ul::-webkit-scrollbar{
+  display: none;
+}
+.getForm_ul li{
+  width: 194px;
+  height: 250px;
+  /* background-color: blue; */
+  border: 3px solid steelblue;
+  border-radius: 50px;
+  position: relative;
+  margin: 80px 100px 0px 100px;
+}
+.getForm_ul li img{
+  width: 100px;
+  border: 3px solid steelblue;
+  border-radius: 50px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 15px;
+}
+.getForm_ul li input{
+  outline: none;
+  text-align: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 1.2em;
+  border: none;
+  width: 150px;
+}
+.getForm_ul li .get_accept{
+  width: 150px;
+  background-color: rgb(55, 140, 255);
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  cursor: pointer;
+}
+.getForm_ul li .get_delete{
+  width: 150px;
+  background-color: rgb(220, 80, 80);
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* 친구 요청 리스트 폼 */
+.sendListForm_ul{
+  /* background-color: skyblue; */
+  position: absolute;
+  top:220px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: calc(100% - 220px);
+  /* border-top: 3px solid black;
+  border-left: 3px solid black;
+  border-right: 3px solid black; */
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+.sendListForm_ul::-webkit-scrollbar{
+  display: none;
+}
+.sendListForm_ul li{
+  width: 194px;
+  height: 230px;
+  /* background-color: blue; */
+  border: 3px solid steelblue;
+  border-radius: 50px;
+  position: relative;
+  margin: 80px 100px 0px 100px;
+}
+.sendListForm_ul li img{
+  width: 100px;
+  border: 3px solid steelblue;
+  border-radius: 50px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 15px;
+}
+.sendListForm_ul li input{
+  outline: none;
+  text-align: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 1.2em;
+  border: none;
+  width: 150px;
+}
+
+.sendListForm_ul li .send_delete{
+  width: 150px;
+  background-color: rgb(220, 80, 80);
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  cursor: pointer;
 }

@@ -94,3 +94,4 @@ echo "
     location.href = 'map_manager.php?update';
   </script>
 ";
+?>
