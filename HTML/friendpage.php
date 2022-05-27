@@ -104,11 +104,15 @@ if (isset($_GET['friend_list'])) {
         <img src='../img/userprofile/{$row2['user_profileImg']}' alt='프로필 사진'>
         <input type='hidden' name='userName' value='{$_SESSION["usernickname"]}' readonly>
         <input type='text' name='cancelName' value='{$row['friendname']}' readonly>
-        <button class='send_message'>메세지 보내기</button>
-        <button class='get_delete' onclick='Delete_{$row['friendname']}()'>삭제</button>
+        <button type='button' class='send_message' onclick='ex_{$row['friendname']}()'>채팅</button>
+        <button type='button' class='get_delete' onclick='Delete_{$row['friendname']}()'>삭제</button>
       </form>
     </li>
     <script>
+      function ex_{$row['friendname']}(){
+        alert('채팅!');
+        // e.preventDefault();
+      }
       function Delete_{$row['friendname']}(){
         document.delete_{$row['friendname']}.submit();
       }

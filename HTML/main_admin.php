@@ -198,6 +198,7 @@ $marker_control = "
     var positions = [
       <?= $marker_info ?>
     ];
+    document.getElementById
     <?= $marker_control ?>
   </script>
 

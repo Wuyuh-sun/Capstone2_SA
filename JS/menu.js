@@ -20,11 +20,11 @@ function menuCloseClick(){
 // 우측 메뉴 함수
 function chatOpenClick(){
   friendSidebar.style.right = "0px";
-  windowBlack.style.display = "block";
+  // windowBlack.style.display = "block";
 }
 function chatCloseClick(){
   friendSidebar.style.right = "-310px";
-  windowBlack.style.display = "none";
+  // windowBlack.style.display = "none";
 }
 // 좌측 메뉴 이벤트
 menuBtn.addEventListener("click", menuOpenClick);
