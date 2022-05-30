@@ -1,0 +1,200 @@
+@import url("https://use.typekit.net/avn7pgt.css");
+@import "reset.css";
+.friend_sidebar {
+  width: 300px;
+  height: 100%;
+  background-color: whitesmoke;
+  position: fixed;
+  top: 0;
+  right: 0px;
+  border-right: 1px solid rgba(34, 34, 34, 0.251);
+  transition: 0.7s ease-in-out;
+  z-index: 4;
+}
+
+.friend_barTop {
+  width: 100%;
+  height: 70px;
+  background-color: whitesmoke;
+  border-bottom: 0.1px solid rgba(119, 119, 119, 0.1);
+  position: relative;
+}
+
+
+.friend_sidebar .friend_barTop div {
+  font-weight: bold;
+  font-size: 1.7em;
+  position: relative;
+  top: 15px;
+  left: 6%;
+  color: rgb(87, 87, 87);
+}
+
+.friend_list {
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100% - 70px);
+  margin: 0;
+  padding: 0;
+}
+
+.friend_list::-webkit-scrollbar {
+  display: none;
+}
+
+.friend_list li {
+  display: flex;
+  justify-content: left;
+  padding: 20px 20px 20px 20px;
+  border: 1px solid rgba(70, 70, 70, 0.1);
+  background-color: whitesmoke;
+  width: 260px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.friend_list li:hover {
+  background-color: rgba(160, 160, 160, 0.1);
+}
+
+.friend_list li img {
+  width: 50px;
+  height: 50px;
+  border: 2px solid grey;
+  border-radius: 25px;
+}
+
+.friend_list li .username {
+  font-size: 1.7em;
+  position: relative;
+  left: 30px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.friend_list li .newChat_count {
+  text-align: center;
+  width: 50px;
+  height: 25px;
+  border-radius: 20px;
+  background-color: red;
+  color: whitesmoke;
+  position: relative;
+  top: 15px;
+  font-size: 1.5em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.chatting {
+  width: 300px;
+  height: 100%;
+  background-color: whitesmoke;
+  position: fixed;
+  bottom: -100%;
+  right: 0px;
+  border-right: 1px solid rgba(34, 34, 34, 0.251);
+  transition: 0.5s ease-in-out;
+  z-index: 4;
+  /* border: 1px solid black; */
+}
+
+.chatCloseBtn {
+  width: 100%;
+  height: 70px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.chatCloseBtn img {
+  width: 60px;
+  height: 50px;
+  position: relative;
+  top:10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.chatLog{
+  width: 280px;
+  height: calc(100% - 140px);
+  /* background-color: green; */
+  position: relative;
+  overflow-y: scroll;
+  padding: 10px 10px 0 10px;
+  display: flex;
+  flex-direction: column;
+}
+.chatLog::-webkit-scrollbar {
+  display: none;
+}
+
+.chat_user{
+  /* border: 1px solid black; */
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+.chat_user .chatMsg{
+  width: auto;
+  max-width: 220px;
+  height: auto;
+  border: 1px solid black;
+  background-color: whitesmoke;
+  border-radius: 20px 0px 20px 20px;
+  text-align: justify;
+  word-break:break-all;
+  padding: 15px 10px 15px 10px;
+}
+
+.chat_friend{
+  /* border: 1px solid black; */
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-start;
+}
+.chat_friend img{
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: whitesmoke;
+}
+.chat_friend .group .friend_name{
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0 0 10px 10px;
+}
+.chat_friend .group .chatMsg{
+  width: auto;
+  max-width: 230px;
+  height: auto;
+  margin-left: 10px;
+  border: 1px solid black;
+  background-color: whitesmoke;
+  border-radius: 0px 20px 20px 20px;
+  text-align: justify;
+  word-break:break-all;
+  padding: 15px 10px 15px 10px;
+}
+
+
+.chat_txt {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  width: 250px;
+  border-radius: 50px;
+  outline: none;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    a {
+      display: inline-block;
+      padding: 5px 7%;
+      text-decoration: none;
+    }
+
+    nav,
+    section {
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    nav {
+      width: 350px;
+      padding: 5px;
+    }
+
+    section {
+      width: 350px;
+      height: 130px;
+      overflow-y: hidden;
+      border: 1px solid black;
+      font-size: 0;
+      scroll-behavior: smooth;
+      /* <----- THE SECRET ---- */
+    }
+
+    section div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      font-size: 8vw;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="#page-1">1</a>
+    <a href="#page-2">2</a>
+    <a href="#page-3">3</a>
+  </nav>
+  <section>
+    <div id="page-1">1</div>
+    <div id="page-2">2</div>
+    <div id="page-3">3</div>
+  </section>
+
+
+</body>
+
+</html>

@@ -184,7 +184,9 @@ $marker_control = "
 </head>
 
 <body>
+  
   <?= $header ?>
+  
   <!-- 지도 -->
   <div id="map"></div>
 

@@ -72,7 +72,16 @@ CREATE TABLE `friends` (
   `friend` int(11) NULL,
   PRIMARY KEY (`idx`)
 );
-
+--
+-- Table structure for table `friends`
+--
+CREATE TABLE `chatlog` (
+  `idx` int(11) NOT NULL AUTO_INCREMENT,
+  `send_username` varchar(30) NULL,
+  `get_username` varchar(30) NULL,
+  `msg`varchar(1000) NULL,
+  PRIMARY KEY (`idx`)
+);
 
 
 

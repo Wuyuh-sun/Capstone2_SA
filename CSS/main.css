@@ -99,139 +99,34 @@ body{
   cursor: pointer;
 }
 /* chat */
-.chat{
+.chat {
   width: 50px;
   position: fixed;
   right: 0%;
   margin: 10px 10px 0 0;
   cursor: pointer;
 }
-.friend_sidebar{
-  width:300px;
-  height: 100%;
-  background-color: whitesmoke;
-  position: fixed;
-  top:0;
-  right:-300px;
-  border-right: 1px solid rgba(34, 34, 34, 0.251);
-  transition: 0.7s ease-in-out;
-  z-index: 4;
-}
-.friend_barTop{
-  width:100%;
-  height: 120px;
-  background-color: whitesmoke;
-  border-bottom: 0.1px solid rgba(119, 119, 119, 0.1);
-  position: relative;
-}
-.friend_barTop .menu_closeBtn2{
-  transform: rotate(270deg);
-  width: 40px;
-  position: relative;
-  top:10%;
-  left: 6%;
-  cursor: pointer;
-}
-.friend_sidebar div:nth-child(2){
-  font-weight: bold;
-  font-size: 1.7em;
-  position: relative;
-  top:20%;
-  left:6%;
-  color: rgb(87, 87, 87);
-}
-.friend_list{
-  overflow: scroll;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: calc(100% - 120px);
-}
-.friend_list::-webkit-scrollbar{
-  display: none;
-}
-.friend_list li{
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 20px 20px 20px;
-  border: 1px solid rgba(70, 70, 70, 0.1);
-  background-color: whitesmoke;
-  width: 260px;
-  height: 50px;
-  cursor: pointer;
-}
-.friend_list li:hover{
-  background-color: rgba(160, 160, 160, 0.1);
-}
-.friend_list li img{
+.chat_closeBtn{
   width: 50px;
   height: 50px;
-  border: 1px solid black;
-  border-radius: 50%;
-}
-.friend_list li .username{
-  font-size: 1.7em;
-  position: relative;
-  left: -10px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.friend_list li .newChat_count{
-  text-align: center;
-  width: 50px;
-  height: 25px;
-  border-radius: 20px;
-  background-color: red;
-  color: whitesmoke;
-  position: relative;
-  top:15px;
-  font-size: 1.5em;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.chatting{
-  width:300px;
-  height: 100%;
-  background-color: whitesmoke;
+  background-color: white;
   position: fixed;
-  top:0;
-  right:300px;
-  border-right: 1px solid rgba(34, 34, 34, 0.251);
-  transition: 0.7s ease-in-out;
-  z-index: 4;
-}
-.chatting_barTop{
-  width:100%;
-  height:80px;
-  background-color: whitesmoke;
-  border-bottom: 1px solid rgba(119, 119, 119, 0.1);
-  position: relative;
-}
-.chatting_barTop .menu_closeBtn2{
-  transform: rotate(270deg);
-  width: 40px;
-  position: relative;
-  top: calc(10% + 5px);
-  left: 6%;
+  margin: 0px 0px 0 0;
+  right: 0px;
+  z-index: 9;
   cursor: pointer;
-}
-.chat_user p{
-
-}
-.chat_txt{
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 10px;
-  width: 250px;
-  border-radius: 50px;
+  transition: 0.5s ease-in-out;
+  border: 10px solid white;
 }
 
+iframe{
+  width: 300px;
+  height: 100%;
+  position: fixed;
+  right: -300px;
+  z-index: 10;
+  transition: 0.5s ease-in-out;
+}
 /* 지도 정보 오버레이 */
 #map{
   position:fixed;
@@ -405,3 +300,4 @@ button{
   top:65px;
   left: 19px;
 }
+
