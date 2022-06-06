@@ -9,7 +9,12 @@ if (!$_SESSION["useremail"]) {
           </script> 
         ");
 }
-
+if ($_SESSION["user_grade"] == "root") {
+  include("./header_admin.php");
+}
+if ($_SESSION["user_grade"] == NULL) {
+  include("./header.php");
+}
 // print_r($_SESSION);
 
 // 친구 보내기 폼
@@ -24,6 +29,12 @@ if (isset($_GET['friend_send'])) {
   $sql2 = "select * from userinfo where nickname='{$data['friendname']}'";
   $result2 = mysqli_query($conn, $sql2);
   $row2 = mysqli_fetch_array($result2);
+  if ($row['user_profileImg'] == '') {
+    $row['user_profileImg'] = 'user.png';
+  }
+  if ($row2['user_profileImg'] == '') {
+    $row2['user_profileImg'] = 'user.png';
+  }
   $send_friend_form = "
   <div class='sendForm' name='sendForm'>
   <div class='myinfo_text'>내 프로필</div>
@@ -90,11 +101,15 @@ $list_friend_form = "";
 if (isset($_GET['friend_list'])) {
   $sql = "select * from friends where username='{$_SESSION["usernickname"]}' and friend='1' order by friendname;";
   $result = mysqli_query($conn, $sql);
-  while($row = mysqli_fetch_array($result)){
+  while ($row = mysqli_fetch_array($result)) {
     $sql2 = "select * from userinfo where nickname='{$row['friendname']}'";
     $result2 = mysqli_query($conn, $sql2);
     $row2 = mysqli_fetch_array($result2);
-    $friendList_li = $friendList_li."
+    if ($row2['user_profileImg'] == '') {
+      $row2['user_profileImg'] = 'user.png';
+    }
+    $friendName = $row['friendname'];
+    $friendList_li = $friendList_li . "
     <li>
     <form 
       action='friend_Delete.php' 
@@ -104,15 +119,22 @@ if (isset($_GET['friend_list'])) {
         <img src='../img/userprofile/{$row2['user_profileImg']}' alt='프로필 사진'>
         <input type='hidden' name='userName' value='{$_SESSION["usernickname"]}' readonly>
         <input type='text' name='cancelName' value='{$row['friendname']}' readonly>
-        <button type='button' class='send_message' onclick='ex_{$row['friendname']}()'>채팅</button>
+        <button type='button' class='send_message' onclick='ex_{$friendName}()'>채팅</button>
         <button type='button' class='get_delete' onclick='Delete_{$row['friendname']}()'>삭제</button>
       </form>
     </li>
     <script>
-      function ex_{$row['friendname']}(){
-        alert('채팅!');
-        // e.preventDefault();
+      function ex_{$friendName}(){
+        friend_chatOpenClick();
+        document.querySelectorAll('.chatting').forEach(function(i){
+          i.style.bottom='-100%';
+          console.log('이전 채팅 종료');
+          clearInterval(interval);
+        })
+        userClick_{$friendName}();
+        
       }
+
       function Delete_{$row['friendname']}(){
         document.delete_{$row['friendname']}.submit();
       }
@@ -136,11 +158,14 @@ $get_friend_form = "";
 if (isset($_GET['friend_get'])) {
   $sql = "select * from friends where username='{$_SESSION["usernickname"]}' and get='1' order by idx desc;";
   $result = mysqli_query($conn, $sql);
-  while($row = mysqli_fetch_array($result)){
+  while ($row = mysqli_fetch_array($result)) {
     $sql2 = "select * from userinfo where nickname='{$row['friendname']}'";
     $result2 = mysqli_query($conn, $sql2);
     $row2 = mysqli_fetch_array($result2);
-    $getList_li = $getList_li."
+    if ($row2['user_profileImg'] == '') {
+      $row2['user_profileImg'] = 'user.png';
+    }
+    $getList_li = $getList_li . "
     <li>
       <img src='../img/userprofile/{$row2['user_profileImg']}' alt='프로필 사진'>
       <form 
@@ -182,12 +207,15 @@ $sendList_friend_form = "";
 if (isset($_GET['friend_sendList'])) {
   $sql = "select * from friends where username='{$_SESSION["usernickname"]}' and send='1' order by idx desc;";
   $result = mysqli_query($conn, $sql);
-  while($row = mysqli_fetch_array($result)){
+  while ($row = mysqli_fetch_array($result)) {
     $sql2 = "select * from userinfo where nickname='{$row['friendname']}'";
     $result2 = mysqli_query($conn, $sql2);
     $row2 = mysqli_fetch_array($result2);
+    if ($row2['user_profileImg'] == '') {
+      $row2['user_profileImg'] = 'user.png';
+    }
     // print_r($row);
-    $sendList_li = $sendList_li."
+    $sendList_li = $sendList_li . "
     <li>
       <img src='../img/userprofile/{$row2['user_profileImg']}' alt='프로필 사진'>
       <form 
@@ -230,38 +258,12 @@ if (isset($_GET['friend_sendList'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="../CSS/friendpage.css">
+  <link rel="stylesheet" href="../CSS/header.css">
   <title>Document</title>
 </head>
 
 <body>
-  <div class="windowBlack" id="windowBlack"></div>
-  <!-- 헤더 -->
-  <div class="header">
-    <!-- 메뉴 -->
-    <img src="../img/menu_black_24dp.svg" class="menu" id="menu">
-    <!-- SA홈 아이콘 -->
-    <a href="main.php">
-      <div class="SA_HOME" id="SA_HOME">
-        <div class="SA" id="SA">SA</div>
-      </div>
-    </a>
-    <!-- 채팅 -->
-    <img src="../img/sms_black_24dp.svg" class="chat" id="chat">
-  </div>
-  <!--좌측 사이드바 -->
-  <div class="menu_sidebar" id="menu_sidebar">
-    <div><a href="myinfo.php">내 정보</a></div>
-    <div><a href="friendpage.php?friend_send">친구</a></div>
-    <div><a href="logout.php">로그아웃</a></div>
-    <img src="../img/expand_circle_down_black_24dp.svg" class="menu_closeBtn1" id="menu_closeBtn1">
-  </div>
-  <!-- 우측 사이드바 -->
-  <div class="friend_sidebar" id="friend_sidebar">
-    <div class="friend_barTop">
-      <img src="../img/expand_circle_down_black_24dp.svg" class="menu_closeBtn2" id="menu_closeBtn2">
-      <div>친구 목록</div>
-    </div>
-  </div>
+  <?= $header ?>
   <!-- 친구 관리 -->
   <div class='friendForm'>
     <ul class='mark_btn1'>
@@ -281,7 +283,7 @@ if (isset($_GET['friend_sendList'])) {
       </a>
     </ul>
   </div>
-
+  
 
   <?= $send_friend_form ?>
   <?= $list_friend_form ?>

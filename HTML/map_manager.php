@@ -414,6 +414,7 @@ if (isset($_GET['delete'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../CSS/main.css">
   <link rel="stylesheet" href="../CSS/map_manager.css">
+  <link rel="stylesheet" href="../CSS/header.css">
   <title>Document</title>
 </head>
 

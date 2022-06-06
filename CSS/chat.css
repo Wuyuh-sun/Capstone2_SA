@@ -6,10 +6,12 @@
   background-color: whitesmoke;
   position: fixed;
   top: 0;
-  right: 0px;
   border-right: 1px solid rgba(34, 34, 34, 0.251);
-  transition: 0.7s ease-in-out;
+  /* transition: 0.7s ease-in-out; */
   z-index: 4;
+  right: -300px;
+  z-index: 10;
+  transition: 0.5s ease-in-out;
 }
 
 .friend_barTop {
@@ -44,7 +46,7 @@
   display: none;
 }
 
-.friend_list li {
+.friend_list > li {
   display: flex;
   justify-content: left;
   padding: 20px 20px 20px 20px;
@@ -55,28 +57,31 @@
   cursor: pointer;
 }
 
-.friend_list li:hover {
+.friend_list > li:hover {
   background-color: rgba(160, 160, 160, 0.1);
 }
 
-.friend_list li img {
+.friend_list > li img {
   width: 50px;
   height: 50px;
   border: 2px solid grey;
   border-radius: 25px;
 }
 
-.friend_list li .username {
+.friend_list > li .username {
   font-size: 1.7em;
+  width: 180px;
   position: relative;
   left: 30px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  overflow:hidden;
+  text-overflow: ellipsis;
 }
 
-.friend_list li .newChat_count {
+.friend_list > li .newChat_count {
   text-align: center;
   width: 50px;
   height: 25px;
@@ -96,7 +101,7 @@
   width: 300px;
   height: 100%;
   background-color: whitesmoke;
-  position: fixed;
+  position: absolute;
   bottom: -100%;
   right: 0px;
   border-right: 1px solid rgba(34, 34, 34, 0.251);
@@ -107,6 +112,8 @@
 
 .chatCloseBtn {
   width: 100%;
+  position: relative;
+  right: -1.5px;
   height: 70px;
   background-color: rgba(0, 0, 0, 0.8);
 }
@@ -132,6 +139,19 @@
 }
 .chatLog::-webkit-scrollbar {
   display: none;
+}
+.chatLog_down{
+  cursor: pointer;
+  display: none;
+  /* display: block; */
+}
+.chatLog_down img{
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom:50px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .chat_user{

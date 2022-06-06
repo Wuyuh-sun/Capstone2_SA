@@ -115,8 +115,8 @@ while ($row = mysqli_fetch_array($result)) {
               `  <div class='place_address3'>{$row['address']}</div>` +
               `  <ul class='place_link'>` +
               `    <a href='#1'><li></li></a>` +
-              `    <a href='./bbs/bbs.php?placename={$row['placename']}'><li></li></a>` +
-              `    <a href='./faq/faq.php'><li></li></a>` +
+              `    <a href='./bbs.php?placename={$row['placename']}'><li></li></a>` +
+              `    <a href='./faq.php'><li></li></a>` +
               `  </ul>` +
               `</div>` +
               `</div>` +
@@ -180,6 +180,7 @@ $marker_control = "
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../CSS/main.css">
+  <link rel="stylesheet" href="../CSS/header.css">
   <title>Document</title>
 </head>
 

@@ -6,5 +6,4 @@ bbs_listAfter.addEventListener("click", function(){
   } else{
     bbs_listAfter.style.top = "70px";
   }
-  
 })

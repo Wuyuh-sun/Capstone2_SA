@@ -7,11 +7,13 @@ $data = array(
   'pw'=>mysqli_real_escape_string($conn, $_POST['pw'])
 );
 
-$sql = "INSERT INTO userinfo(email, password, nickname) 
+$sql = "INSERT INTO userinfo(email, password, nickname, user_grade, user_profileImg) 
 VALUES (
   '{$data['email']}', 
   '{$data['pw']}',
-  '{$data['nickname']}'
+  '{$data['nickname']}',
+  NULL,
+  'user.png'
   )";
 
 $result = mysqli_multi_query($conn, $sql);

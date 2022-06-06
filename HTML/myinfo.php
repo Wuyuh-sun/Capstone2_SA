@@ -24,6 +24,13 @@ if(!$_SESSION["useremail"]){
         </script> 
       ");
 }
+
+if($_SESSION["user_grade"] == "root"){
+  include("./header_admin.php");
+}
+if($_SESSION["user_grade"] == NULL){
+  include("./header.php");
+}
 $sql = "select * from userinfo where email='{$_SESSION["useremail"]}'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_array($result);
@@ -41,42 +48,16 @@ if($row['user_profileImg'] ==''){
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/header.css">
   <link rel="stylesheet" href="../CSS/myinfo.css">
   <title>Document</title>
 </head>
 
 <body>
-  <div class="windowBlack" id="windowBlack"></div>
-  <!-- 헤더 -->
-  <div class="header">
-    <!-- 메뉴 -->
-    <img src="../img/menu_black_24dp.svg" class="menu" id="menu">
-    <!-- SA홈 아이콘 -->
-    <a href="main.php">
-      <div class="SA_HOME" id="SA_HOME">
-        <div class="SA" id="SA">SA</div>
-      </div>
-    </a>
-    <!-- 채팅 -->
-    <img src="../img/sms_black_24dp.svg" class="chat" id="chat">
-  </div>
-  <!--좌측 사이드바 -->
-  <div class="menu_sidebar" id="menu_sidebar">
-    <div><a href="myinfo.php">내 정보</a></div>
-    <div><a href="friendpage.php">친구</a></div>
-    <div><a href="logout.php">로그아웃</a></div>
-    <img src="../img/expand_circle_down_black_24dp.svg" class="menu_closeBtn1" id="menu_closeBtn1">
-  </div>
-  <!-- 우측 사이드바 -->
-  <div class="friend_sidebar" id="friend_sidebar">
-    <div class="friend_barTop">
-      <img src="../img/expand_circle_down_black_24dp.svg" class="menu_closeBtn2" id="menu_closeBtn2">
-      <div>친구 목록</div>
-    </div>
-  </div>
+  <?=$header?>
   <!-- 내 정보 -->
   <form action="myinfo_update.php" name="myinfo_update" method="POST" enctype='multipart/form-data'>
-    <div class="windowBlack2" id="windowBlack2"></div>
+    <div class="windowBlack2" id="windowBlack2" onclick="profileUpdate_cancel()"></div>
     <div class="imgClickForm" id='imgClickForm'>
       <label for="profileImg">프로필 사진 변경</label>
       <input type="file" name='profileImgFile' id='profileImg' onchange='profileImgFileSubmit()'>

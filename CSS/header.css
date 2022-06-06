@@ -1,0 +1,283 @@
+@import url("https://use.typekit.net/avn7pgt.css");
+@import "reset.css";
+
+body{
+    font-family: myriad-pro, sans-serif;
+    height: 100%;
+}
+.windowBlack{
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.2;
+  z-index: 3;
+  position: fixed;
+  display: none;
+}
+.header{
+  width: 100%;
+  height: 70px;
+  /* background-color: whitesmoke; */
+  border-bottom: 1px solid rgb(182, 182, 182);
+  background-color: white;
+  position: fixed;
+  z-index: 2;
+}
+.SA_HOME{
+  width:50px;
+  height: 50px;
+  background-color: rgb(36, 36, 36);
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  display: inline-block;
+}
+.SA{
+  font-weight: 700;
+  font-style: normal;
+  color:rgb(255, 255, 255);
+  font-size: 1.3em;
+  letter-spacing: 0.1em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 50%;
+  height: 40%;
+  position: relative;
+  top:42%;
+  left:48%;
+  transform: translate(-50%,-50%);
+} 
+/* menu */
+.menu{
+  width: 50px;
+  position: fixed;
+  left:0%;
+  margin: 8px 0 0 10px;
+  cursor: pointer;
+}
+.menu_sidebar{
+  width:300px;
+  height: 100%;
+  background-color: whitesmoke;
+  position: fixed;
+  top:0;
+  left:-300px;
+  border-right: 1px solid rgba(34, 34, 34, 0.251);
+  transition: 0.7s ease-in-out;
+  z-index: 4;
+}
+
+.userinfoBox{
+  width: 180px;
+  height: 150px;
+  border: 3px solid rgb(87, 87, 87);
+  border-radius: 30px;
+  position: relative;
+  top:-10px;
+  left:40px;
+  box-shadow: inset 0px 0px 2px 5px rgba(0, 0, 0, 0.1);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.userProfile{
+  width: 100px;
+  height: 100px;
+  border: 3px solid rgb(87, 87, 87);
+  border-radius: 50%;
+  position: relative;
+  top:10px;
+  left:50%;
+  transform: translateX(-50%);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.userProfile img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.userNickname{
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 5px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width:150px;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  
+}
+.menu_sidebar a{
+  text-decoration: none;
+  color: rgb(87, 87, 87);
+  font-size: 2em;
+  font-weight: bold;
+  position: relative;
+  top:0px;
+  left:40px;
+  transition: 0.3s ease-in-out;
+}
+.menu_sidebar a:hover{
+  color: steelblue;
+}
+.menu_sidebar .logoutBtn:hover{
+  color: red;
+}
+
+.menu_sidebar > div{
+  margin-top: 40px;
+}
+/* .menu_sidebar div:nth-child(2){
+  margin-top: 40px;
+}
+.menu_sidebar div:nth-child(3){
+  margin-top: 40px;
+}
+.menu_sidebar div:nth-child(4){
+  margin-top: 40px;
+} */
+.menu_closeBtn1{
+  transform: rotate(90deg);
+  width: 40px;
+  position: absolute;
+  top:1%;
+  right:5%;
+  cursor: pointer;
+}
+/* chat */
+.chat {
+  width: 50px;
+  position: fixed;
+  right: 0%;
+  margin: 10px 10px 0 0;
+  cursor: pointer;
+}
+.chat_closeBtn{
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  position: fixed;
+  margin: 0px 0px 0 0;
+  right: 0px;
+  z-index: 9;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+  border: 10px solid white;
+}
+
+iframe{
+  width: 300px;
+  height: 100%;
+  position: fixed;
+  right: -300px;
+  z-index: 10;
+  transition: 0.5s ease-in-out;
+}
+
+
+
+.flip-card {
+  background-color: transparent;
+  /* width: 300px; */
+  height: 150px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 180px;
+  height: 150px;
+  border: 3px solid rgb(87, 87, 87);
+  border-radius: 30px;
+  top:-10px;
+  left:40px;
+  box-shadow: inset 0px 0px 2px 5px rgba(0, 0, 0, 0.1);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+
+.flip-card-front{
+  width: 100px;
+  height: 100px;
+  border: 3px solid rgb(87, 87, 87);
+  border-radius: 50%;
+  position: relative;
+  top:10px;
+  left:50%;
+  transform: translateX(-50%);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.flip-card-front img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  transform: rotateY(180deg);
+}
+.flip-card-back h1{
+  font-size: 0.7em;
+  color: grey;
+  position: relative;
+  top:20%;
+  transform: translateY(-50%);
+}
+.flip-card-back p{
+  font-size: 3em;
+  font-weight: bold;
+  color: black;
+  position: relative;
+  top:40%;
+  transform: translateY(-50%);
+}

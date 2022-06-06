@@ -17,7 +17,17 @@ if ($data['user_profileImg'] == '') {
                 password = '{$data['pw']}',
                 nickname = '{$data['nickname']}'
               WHERE
-                idx ='{$_SESSION['idx']}'
+                idx ='{$_SESSION['idx']}';
+          UPDATE friends
+              SET 
+                username = '{$data['nickname']}'
+              WHERE
+                username ='{$_SESSION["usernickname"]}';
+          UPDATE friends 
+              SET 
+                friendname = '{$data['nickname']}'
+              WHERE
+                friendname ='{$_SESSION["usernickname"]}';
          ";
   $result = mysqli_multi_query($conn, $sql);
 
@@ -33,7 +43,7 @@ if ($data['user_profileImg'] == '') {
     <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />
     <script>
       alert('변경에 성공했습니다.'); 
-      // location.href = 'myinfo.php';
+      location.href = 'myinfo.php';
     </script>");
     $sql = "select * from userinfo where email='{$data['email']}'";
     $result = mysqli_query($conn, $sql);
@@ -76,13 +86,23 @@ if ($data['user_profileImg'] == '') {
   }
 } else {
   $sql = "UPDATE userinfo 
-            SET 
-              email = '{$data['email']}',
-              password = '{$data['pw']}',
-              nickname = '{$data['nickname']}',
-              user_profileImg = '{$data['user_profileImg']}'
-            WHERE
-              idx ='{$_SESSION['idx']}'
+              SET 
+                email = '{$data['email']}',
+                password = '{$data['pw']}',
+                nickname = '{$data['nickname']}',
+                user_profileImg = '{$data['user_profileImg']}'
+              WHERE
+                idx ='{$_SESSION['idx']}';
+          UPDATE friends
+              SET 
+                username = '{$data['nickname']}'
+              WHERE
+                username ='{$_SESSION["usernickname"]}';
+          UPDATE friends 
+              SET 
+                friendname = '{$data['nickname']}'
+              WHERE
+                friendname ='{$_SESSION["usernickname"]}';
             ";
   $result = mysqli_multi_query($conn, $sql);
 

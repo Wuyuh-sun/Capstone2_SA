@@ -13,8 +13,18 @@ git 명령어 - https://hackmd.io/@oW_dDxdsRoSpl0M64Tfg2g/ByfwpNJ-K
 mail 보내기 - https://blog.redinfo.co.kr/post/view?pid=74
 
 xampp 설치 - https://www.apachefriends.org/index.html
+설치하기 - https://teserre.tistory.com/12
 
 mysql 계정 권한 부여 - https://velog.io/@ejayjeon/MYSQL-1.-%EA%B3%84%EC%A0%95-%EC%83%9D%EC%84%B1-%EA%B6%8C%ED%95%9C-%EB%B6%80%EC%97%AC
 
 kakaoMap api 오버레이 닫기 문제 해결 - https://devtalk.kakao.com/t/topic/64848/8
 
+AJAX 이용 - https://developer.mozilla.org/ko/docs/Web/API/Fetch_API/Using_Fetch
+
+실시간 데이터 송신 방법 - https://valuefactory.tistory.com/263
+
+안드로이드 웹뷰 앱 만들기 - https://wuny-dev.tistory.com/22
+
+자바스크립트 비동기 프로그래밍 - https://velog.io/@idenk/JS-%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D
+
+SQL 다중 쿼리 = https://zxchsr.tistory.com/90

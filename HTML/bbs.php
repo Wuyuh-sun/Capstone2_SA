@@ -1,5 +1,11 @@
 <?
   session_start();
+  if($_SESSION["user_grade"] == "root"){
+    include("./header_admin.php");
+  }
+  if($_SESSION["user_grade"] == NULL){
+    include("./header.php");
+  }
   if(!$_SESSION["useremail"]){
     echo(" 
           <script> 
@@ -8,6 +14,7 @@
           </script> 
         ");
   }
+  
   $placename = $_GET['placename'];
 
   include("../db_connect.php");
@@ -22,7 +29,7 @@
   <li>
     <div>
       <a href='bbs.php?placename={$placename}&title={$row['title']}'><h3>{$row['title']}</h3></a>
-      <span>{$row['content']}</span>
+      <div class='content'>{$row['content']}</div>
     </div>
     <div>
       <p>
@@ -242,39 +249,12 @@
   <link rel="stylesheet" href="../../CSS/bbs.css">
   <link rel="stylesheet" href="../../CSS/bbs_write.css">
   <link rel="stylesheet" href="../../CSS/bbs_read.css">
+  <link rel="stylesheet" href="../CSS/header.css">
   <title>Document</title>
 </head>
 
 <body>
-  <div class="windowBlack" id="windowBlack"></div>
-  <!-- 헤더 -->
-  <div class="header">
-    <!-- 메뉴 -->
-    <img src="../../img/menu_black_24dp.svg" class="menu" id="menu">
-    <!-- SA홈 아이콘 -->
-    <a href="../main.php">
-      <div class="SA_HOME" id="SA_HOME">
-        <div class="SA" id="SA">SA</div>
-      </div>
-    </a>
-    <!-- 채팅 -->
-    <img src="../../img/sms_black_24dp.svg" class="chat" id="chat">
-  </div>
-  <!--좌측 사이드바 -->
-  <div class="menu_sidebar" id="menu_sidebar">
-    <div><a href="../myinfo.php">내 정보</a></div>
-    <div><a href="../friendpage.php">친구</a></div>
-    <div><a href="../logout.php">로그아웃</a></div>
-    <img src="../../img/expand_circle_down_black_24dp.svg" class="menu_closeBtn1" id="menu_closeBtn1">
-  </div>
-  <!-- 우측 사이드바 -->
-  <div class="friend_sidebar" id="friend_sidebar">
-    <div class="friend_barTop">
-      <img src="../../img/expand_circle_down_black_24dp.svg" class="menu_closeBtn2" id="menu_closeBtn2">
-      <div>친구 목록</div>
-    </div>
-  </div>
-
+  <?=$header?>
   <!-- 게시판 -->
   <!-- 게시판 메뉴 -->
   <div class="bbs_list" id="bbs_list">
