@@ -137,10 +137,18 @@ $header = "
     <img src='../img/menu_black_24dp.svg' class='menu' id='menu'>
     <!-- SA홈 아이콘 -->
     <a href='main.php'>
-      <div class='SA_HOME' id='SA_HOME'>
-        <div class='SA' id='SA'>SA</div>
-      </div>
-    </a>
+        <div class='home_text'>
+          <div class='SA_HOME' id='SA_HOME'>
+            <!--<div class='SA' id='SA'>SA</div>-->
+          </div>
+          <span>S</span>
+          <span class='span2'>moke</span>
+          <span>A</span>
+          <span class='span4'>rea</span>
+        </div>
+      </a>
+      <div class='white1'></div>
+      <div class='white2'></div>
     <!-- 채팅 -->
     <img src='../img/sms_black_24dp.svg' class='chat_closeBtn' id='chat_closeBtn'>
   </div>

@@ -87,8 +87,8 @@
   margin-left: 30px;
 }
 .content_content{
-  position: relative;
-  top:160px;
+  position: absolute;
+  top:270px;
   left:30px;
   width: 1545px;
   border: 3px solid black;
@@ -104,7 +104,7 @@
 }
 .good_icon{
   position: relative;
-  top:200px;
+  top:1000px;
   left: 30px;
   width: 30px;
   cursor: pointer;
@@ -112,17 +112,18 @@
 }
 .good_icon img{
   width: 30px;
+  margin-right: 10px;
 }
 .comm_icon{
   position: relative;
-  top:170px;
+  top:970px;
   left: 120px;
   width: 28px;
-  cursor: pointer;
   display: inline;
 }
 .comm_icon img{
   width: 28px;
+  cursor: pointer;
 }
 .comm_icon::after{
   content: "";
@@ -136,7 +137,7 @@
   display: flex;
   flex-direction: row;
   position: relative;
-  top:250px;
+  top: 1050px;
   left: 30px;
   width: 1550px;
   min-height: 100px;
@@ -168,33 +169,40 @@
 }
 .commView_form{
   position: relative;
-  top:300px;
+  top:1100px;
   left: 30px;
   border-top: 3px solid black;
   padding-top: 50px;
   padding-bottom: 50px;
   width: 1550px;
   height: max-content;
-  background-color:cornsilk;
-  display: none;
+  /* background-color:cornsilk; */
+  display: inline;
 }
 .bbs_comm{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   background-color: aliceblue;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  /* margin-bottom: 10px; */
 }
 .comm_info{
   display: flex;
   flex-direction: row;
 }
 .comm_info li:nth-child(1){
-  width: 100px;
+  width: 80px;
   height: 50px;
   text-align: center;
   background-color: aliceblue;
   line-height: 50px;
   border-right: 1px solid black;
+  font-weight: bold;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  padding: 0 10px 0 10px;
 }
 .comm_info li:nth-child(2){
   width:1200px;
@@ -203,6 +211,8 @@
   padding-left: 30px;
   background-color: aliceblue;
   line-height: 50px;
+  overflow:hidden;
+  text-overflow: ellipsis;
 }
 .comm_cmd{
   width: 200px;
@@ -211,9 +221,136 @@
   background-color: aliceblue;
   line-height: 50px;
 }
-.comm_cmd a{
+.comm_cmd .comm_delete{
   text-decoration: none;
   color: black;
   border-left: 1px solid black;
   padding: 0 20px 0 20px;
+  cursor: pointer;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.comm_cmd .comm_comm{
+  text-decoration: none;
+  color: black;
+  border-left: 1px solid black;
+  padding: 0 20px 0 20px;
+  cursor: pointer;
+  display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.comm_comm_form{
+  position: relative;
+  width: 95%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid black;
+  /* display: inline-block; */
+  padding: 10px;
+  margin-top: 10px;
+  /* margin-bottom: 10px; */
+  display: none;
+}
+.comm_comm_form input:nth-child(1){
+  width: 94%;
+  outline: none;
+  padding: 5px 10px 5px 10px;
+  font-size: 1em;
+}
+.comm_comm_form .comm_comm_submitBtn{
+  background-color: black;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 5px 10px 5px 10px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+.bbs_comm_comm{
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.bbs_comm_comm li{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 50px;
+  background-color: rgba(100, 120, 160, 0.15);
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin-bottom: 1px;
+}
+.bbs_comm_comm li div{
+  line-height: 50px;
+  
+}
+.bbs_comm_comm li div:nth-child(1){
+  width: 80px;
+  height: 50px;
+  text-align: center;
+  background-color: rgba(100, 120, 160, 0.15);
+  line-height: 50px;
+  border-right: 1px solid black;
+  color: black;
+  font-size: 2em;
+  font-weight: bold;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  padding: 0 10px 0 10px;
+}
+.bbs_comm_comm li div:nth-child(2){
+  width: 80px;
+  height: 50px;
+  text-align: center;
+  background-color: rgba(100, 120, 160, 0.15);
+  line-height: 50px;
+  border-right: 1px solid black;
+  color: black;
+  font-size: 1em;
+  font-weight: bold;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  padding: 0 10px 0 10px;
+}
+.bbs_comm_comm li div:nth-child(3){
+  width: 1215px;
+  height: 50px;
+  background-color: rgba(100, 120, 160, 0.15);
+  line-height: 50px;
+  border-right: 1px solid black;
+  color: black;
+  font-size: 1em;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  padding: 0 10px 0 10px;
+}
+.bbs_comm_comm li div:nth-child(4){
+  width: 90px;
+  height: 50px;
+  text-align: center;
+  background-color: rgba(100, 120, 160, 0.15);
+  line-height: 50px;
+  /* border-right: 1px solid black; */
+  color: black;
+  font-size: 1em;
+  /* font-weight: bold; */
+  overflow:hidden;
+  text-overflow: ellipsis;
+  padding: 0 10px 0 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

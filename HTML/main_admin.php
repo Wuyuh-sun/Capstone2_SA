@@ -116,7 +116,7 @@ while ($row = mysqli_fetch_array($result)) {
               `  <ul class='place_link'>` +
               `    <a href='#1'><li></li></a>` +
               `    <a href='./bbs.php?placename={$row['placename']}'><li></li></a>` +
-              `    <a href='./faq.php'><li></li></a>` +
+              `    <a href='./faq.php?placename={$row['placename']}'><li></li></a>` +
               `  </ul>` +
               `</div>` +
               `</div>` +

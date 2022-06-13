@@ -7,12 +7,13 @@ body{
 
 /* 친구 관리(수락, 추가, 확인) */
 .friendForm{
-  /* background-color: green; */
+  /* background-color: white; */
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   width: 600px;
   height: 100%;
+  /* z-index: 1; */
 }
 
 .mark_btn1{

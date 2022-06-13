@@ -138,11 +138,19 @@ $header = "
     <!-- 메뉴 -->
     <img src='../img/menu_black_24dp.svg' class='menu' id='menu'>
     <!-- SA홈 아이콘 -->
-    <a href='main.php'>
-      <div class='SA_HOME' id='SA_HOME'>
-        <div class='SA' id='SA'>SA</div>
-      </div>
-    </a>
+      <a href='main.php'>
+        <div class='home_text'>
+          <div class='SA_HOME' id='SA_HOME'>
+            <!--<div class='SA' id='SA'>SA</div>-->
+          </div>
+          <span>S</span>
+          <span class='span2'>moke</span>
+          <span>A</span>
+          <span class='span4'>rea</span>
+        </div>
+      </a>
+      <div class='white1'></div>
+      <div class='white2'></div>
     <!-- 채팅 -->
     <img src='../img/sms_black_24dp.svg' class='chat_closeBtn' id='chat_closeBtn'>
   </div>
@@ -164,20 +172,14 @@ $header = "
 
     <div><a href='myinfo.php'>내 정보</a></div>
     <div><a href='friendpage.php?friend_send'>친구</a></div>
-    <div><a href='user_manager.php?create'>회원 관리</a></div>
-    <div><a href='map_manager.php?create'>지도 관리</a></div>
+    <!-- <div><a href='user_manager.php?create'>회원 관리</a></div>-->
+    <div><a href='map_manager.php?create'>지도 관리</a></div> 
     <div><a href='logout.php' class='logoutBtn'>로그아웃</a></div>
     <img src='../img/expand_circle_down_black_24dp.svg' class='menu_closeBtn1' id='menu_closeBtn1'>
   </div>
   <!-- 우측 사이드바 -->
   {$chatAppBackUp}
   
-  
-  <script>
-    function myinfo(){
-      // location.href = '/HTML/myinfo.php';
-    }
-  </script>
 ";
 
 

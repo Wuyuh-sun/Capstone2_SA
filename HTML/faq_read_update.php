@@ -1,26 +1,27 @@
 <?
-// echo "11";
-
 include("./db_connect.php");
 session_start();
 
 $data = array(
   'title'=>mysqli_real_escape_string($conn, $_POST['title']),
-  'author'=>mysqli_real_escape_string($conn, $_POST['author']),
-  'placename'=>mysqli_real_escape_string($conn, $_POST['placename'])
+  'desc'=>mysqli_real_escape_string($conn, $_POST['desc'])
 );
 // echo $data['title'];
 
-$sql = "DELETE FROM bbs_main
-        WHERE title='{$data['title']}' AND author='{$data['author']}'
+$sql = "UPDATE faq_main 
+                SET 
+                  content = '{$data['desc']}'
+                WHERE
+                  title ='{$data['title']}'
           ";
 $result = mysqli_query($conn, $sql);
 
 echo ("
     <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />
     <script>
-      alert('삭제 성공하였습니다.');
-      location.href = 'bbs.php?placename={$data['placename']}';
+      alert('수정 성공하였습니다.');
+      // location.href = 'faq.php?placename={$_SESSION['placename']}&title={$_SESSION['recent_bbs_title']}';
+      history.go(-3);
     </script>");
 
 // echo $_SESSION['placename'];

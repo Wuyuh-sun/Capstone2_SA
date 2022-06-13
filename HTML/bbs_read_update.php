@@ -1,5 +1,5 @@
 <?
-include("../db_connect.php");
+include("./db_connect.php");
 session_start();
 
 $data = array(
@@ -20,7 +20,8 @@ echo ("
     <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />
     <script>
       alert('수정 성공하였습니다.');
-      location.href = 'bbs.php?placename={$_SESSION['placename']}&title={$_SESSION['recent_bbs_title']}';
+      // location.href = 'bbs.php?placename={$_SESSION['placename']}&title={$_SESSION['recent_bbs_title']}';
+      history.go(-3);
     </script>");
 
 // echo $_SESSION['placename'];

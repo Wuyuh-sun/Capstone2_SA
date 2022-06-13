@@ -198,14 +198,10 @@ body{
 .bbs_article_list p:nth-child(2){
   margin-top: 20px;
 }
-.li_pic{
-  width: 15px;
-  margin-right: 5px;
-}
 .li_comm{
   width: 15px;
   margin-right: 5px;
-  margin-left: 10px;
+  
 }
 .li_good{
   width: 15px;

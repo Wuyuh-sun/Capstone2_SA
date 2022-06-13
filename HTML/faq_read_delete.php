@@ -11,7 +11,7 @@ $data = array(
 );
 // echo $data['title'];
 
-$sql = "DELETE FROM bbs_main
+$sql = "DELETE FROM faq_main
         WHERE title='{$data['title']}' AND author='{$data['author']}'
           ";
 $result = mysqli_query($conn, $sql);

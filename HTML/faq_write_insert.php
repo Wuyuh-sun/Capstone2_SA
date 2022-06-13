@@ -5,21 +5,22 @@ $data = array(
   'title'=>mysqli_real_escape_string($conn, $_POST['title']),
   'desc'=>mysqli_real_escape_string($conn, $_POST['desc']),
   'placename'=>$_POST["placename"],
-  'notice'=>$_POST["notice"]
+  'notice'=>$_POST["notice"],
+  'qna'=>$_POST["qna"]
 );
 session_start();
 
-$sql = "INSERT INTO bbs_main(author, title, content, regdate, img_file, bbs_comm, good, notice, placename) 
+$sql = "INSERT INTO faq_main(placename, author, title, content, regdate, qna, bbs_comm, good, notice) 
 VALUES (
+  '{$data['placename']}',
   '{$_SESSION["usernickname"]}',
   '{$data['title']}',
   '{$data['desc']}',
   NOW(),
+  '{$data['qna']}',
   NULL,
   NULL,
-  NULL,
-  '{$data['notice']}',
-  '{$data['placename']}'
+  '{$data['notice']}'
   )";
 
 $result = mysqli_query($conn, $sql);
@@ -37,7 +38,7 @@ if($result === false){
     <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />
     <script>
       alert('글쓰기를 성공하였습니다.');
-      location.href='bbs.php?placename={$data['placename']}';
+      location.href='faq.php?placename={$data['placename']}';
     </script>
   ";
 }
